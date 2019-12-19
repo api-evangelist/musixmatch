@@ -1,0 +1,89 @@
+{
+    "name": "musiXmatch",
+    "description": "Musixmatch is the world's largest catalog of song lyrics and translations",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1621-musixmatch.jpg",
+    "tags": [
+        "api provider",
+        "have api",
+        "have swagger",
+        "lyrics",
+        "meta",
+        "music",
+        "target"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/musixmatch\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "musiXmatch",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1621-musixmatch.jpg",
+            "humanURL": "https:\/\/musixmatch.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/musixmatch.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/musixmatch-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Base",
+            "url": "http:\/\/api.musixmatch.com\/ws\/"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.musixmatch.com"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/blog.musixmatch.com\/rss"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/musixmatch"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/musixmatch"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/developer.musixmatch.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/musixmatch"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1621-2019-09-04-15-22-56.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1621-2019-09-04-15-23-17.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1621-2019-09-04-15-21-37.json"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/#!\/musixmatch"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/musixmatch.com"
+        }
+    ]
+}
