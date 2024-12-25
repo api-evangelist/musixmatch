@@ -24,7 +24,7 @@ apis:
       - type: Documentation
         url: https://developer.musixmatch.com/documentation
       - type: OpenAPI
-        url: properties/musixmatch-openapi-original.yml
+        url: openapimusixmatch-openapi-original.yml
     aid: musixmatch:musixmatch-api
 common:
   - type: Developer
