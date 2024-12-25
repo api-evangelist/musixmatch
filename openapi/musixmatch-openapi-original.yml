@@ -1,0 +1,1563 @@
+openapi: 3.0.1
+info:
+  title: Musixmatch API
+  description: Musixmatch lyrics API is a robust service that permits you to search and retrieve lyrics in the simplest possible way.
+  termsOfService: http://musixmatch.com/apiterms/
+  contact:
+    name: Musixmatch
+    url: https://musixmatch.com
+    email: info@musixmatch.com
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+  version: 1.1.0
+externalDocs:
+  description: Find out more about Musixmatch API
+  url: https://developer.musixmatch.com/
+servers:
+- url: https://api.musixmatch.com/ws/1.1
+security:
+- key: []
+tags:
+- name: Track
+  description: ""
+- name: Artist
+  description: ""
+- name: Album
+  description: ""
+- name: Lyrics
+  description: ""
+- name: Subtitle
+  description: ""
+- name: Snippet
+  description: ""
+paths:
+  /album.tracks.get:
+    get:
+      tags:
+      - Track
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: album_id
+        in: query
+        description: The musiXmatch album id
+        required: true
+        schema:
+          type: string
+      - name: f_has_lyrics
+        in: query
+        description: "When set, filter only contents with lyrics"
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          available:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          track_list:
+                            type: array
+                            description: A list of tracks
+                            items:
+                              $ref: '#/components/schemas/Track'
+      security:
+      - key: []
+  /album.get:
+    get:
+      tags:
+      - Album
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: album_id
+        in: query
+        description: The musiXmatch album id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          album:
+                            $ref: '#/components/schemas/Album'
+      security:
+      - key: []
+  /artist.related.get:
+    get:
+      tags:
+      - Artist
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: artist_id
+        in: query
+        description: The musiXmatch artist id
+        required: true
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          available:
+                            type: number
+                            description: ""
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          artist_list:
+                            type: array
+                            description: A list of artists
+                            items:
+                              type: object
+                              properties:
+                                artist:
+                                  $ref: '#/components/schemas/Artist'
+      security:
+      - key: []
+  /artist.albums.get:
+    get:
+      tags:
+      - Album
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: artist_id
+        in: query
+        description: The musiXmatch artist id
+        required: true
+        schema:
+          type: string
+      - name: s_release_date
+        in: query
+        description: Sort by release date (asc|desc)
+        schema:
+          type: string
+      - name: g_album_name
+        in: query
+        description: Group by Album Name
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          available:
+                            type: number
+                            description: ""
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          album_list:
+                            type: array
+                            description: A list of albums
+                            items:
+                              type: object
+                              properties:
+                                album:
+                                  $ref: '#/components/schemas/Album'
+      security:
+      - key: []
+  /artist.search:
+    get:
+      tags:
+      - Artist
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: q_artist
+        in: query
+        description: The song artist
+        schema:
+          type: string
+      - name: f_artist_id
+        in: query
+        description: "When set, filter by this artist id"
+        schema:
+          type: number
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          available:
+                            type: number
+                            description: ""
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          artist_list:
+                            type: array
+                            description: A list of artists
+                            items:
+                              type: object
+                              properties:
+                                artist:
+                                  $ref: '#/components/schemas/Artist'
+      security:
+      - key: []
+  /artist.get:
+    get:
+      tags:
+      - Artist
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: artist_id
+        in: query
+        description: "\tThe musiXmatch artist id"
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          artist:
+                            $ref: '#/components/schemas/Artist'
+      security:
+      - key: []
+  /matcher.subtitle.get:
+    get:
+      tags:
+      - Subtitle
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: q_track
+        in: query
+        description: The song title
+        schema:
+          type: string
+      - name: q_artist
+        in: query
+        description: "\tThe song artist"
+        schema:
+          type: string
+      - name: f_subtitle_length
+        in: query
+        description: Filter by subtitle length in seconds
+        schema:
+          type: number
+      - name: f_subtitle_length_max_deviation
+        in: query
+        description: Max deviation for a subtitle length in seconds
+        schema:
+          type: number
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          subtitle:
+                            $ref: '#/components/schemas/Subtitle'
+      security:
+      - key: []
+  /matcher.track.get:
+    get:
+      tags:
+      - Track
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: q_artist
+        in: query
+        description: The song artist
+        schema:
+          type: string
+      - name: q_track
+        in: query
+        description: The song title
+        schema:
+          type: string
+      - name: f_has_lyrics
+        in: query
+        description: "When set, filter only contents with lyrics"
+        schema:
+          type: number
+      - name: f_has_subtitle
+        in: query
+        description: "When set, filter only contents with subtitles"
+        schema:
+          type: number
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          track:
+                            $ref: '#/components/schemas/Track'
+      security:
+      - key: []
+  /matcher.lyrics.get:
+    get:
+      tags:
+      - Lyrics
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: q_track
+        in: query
+        description: The song title
+        schema:
+          type: string
+      - name: q_artist
+        in: query
+        description: The song artist
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          lyrics:
+                            $ref: '#/components/schemas/Lyrics'
+      security:
+      - key: []
+  /track.snippet.get:
+    get:
+      tags:
+      - Snippet
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: track_id
+        in: query
+        description: The musiXmatch track id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          snippet:
+                            $ref: '#/components/schemas/Snippet'
+      security:
+      - key: []
+  /track.lyrics.get:
+    get:
+      tags:
+      - Lyrics
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: track_id
+        in: query
+        description: The musiXmatch track id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          lyrics:
+                            $ref: '#/components/schemas/Lyrics'
+      security:
+      - key: []
+  /track.subtitle.get:
+    get:
+      tags:
+      - Subtitle
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: track_id
+        in: query
+        description: The musiXmatch track id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          subtitle:
+                            $ref: '#/components/schemas/Subtitle'
+      security:
+      - key: []
+  /track.get:
+    get:
+      tags:
+      - Track
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: track_id
+        in: query
+        description: The musiXmatch track id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          track:
+                            $ref: '#/components/schemas/Track'
+      security:
+      - key: []
+  /track.search:
+    get:
+      tags:
+      - Track
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: q_track
+        in: query
+        description: The song title
+        schema:
+          type: string
+      - name: q_artist
+        in: query
+        description: The song artist
+        schema:
+          type: string
+      - name: q_lyrics
+        in: query
+        description: Any word in the lyrics
+        schema:
+          type: string
+      - name: f_artist_id
+        in: query
+        description: "When set, filter by this artist id"
+        schema:
+          type: number
+      - name: f_music_genre_id
+        in: query
+        description: "When set, filter by this music category id"
+        schema:
+          type: number
+      - name: f_lyrics_language
+        in: query
+        description: "Filter by the lyrics language (en,it,..)"
+        schema:
+          type: number
+      - name: f_has_lyrics
+        in: query
+        description: "When set, filter only contents with lyrics"
+        schema:
+          type: number
+      - name: s_artist_rating
+        in: query
+        description: Sort by our popularity index for artists (asc|desc)
+        schema:
+          type: string
+      - name: s_track_rating
+        in: query
+        description: Sort by our popularity index for tracks (asc|desc)
+        schema:
+          type: string
+      - name: quorum_factor
+        in: query
+        description: Search only a part of the given query string.Allowed range is
+          (0.1 – 0.9)
+        schema:
+          type: number
+          default: 1.0
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          available:
+                            type: number
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          track_list:
+                            type: array
+                            description: A list of tracks
+                            items:
+                              type: object
+                              properties:
+                                track:
+                                  $ref: '#/components/schemas/Track'
+      security:
+      - key: []
+  /chart.tracks.get:
+    get:
+      tags:
+      - Track
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      - name: country
+        in: query
+        description: A valid ISO 3166 country code
+        schema:
+          type: string
+          default: us
+      - name: f_has_lyrics
+        in: query
+        description: "When set, filter only contents with lyrics"
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          available:
+                            type: number
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          track_list:
+                            type: array
+                            description: A list of tracks
+                            items:
+                              type: object
+                              properties:
+                                track:
+                                  $ref: '#/components/schemas/Track'
+      security:
+      - key: []
+  /chart.artists.get:
+    get:
+      tags:
+      - Artist
+      parameters:
+      - name: format
+        in: query
+        description: "output format: json, jsonp, xml."
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      - name: country
+        in: query
+        description: A valid ISO 3166 country code
+        schema:
+          type: string
+          default: us
+      responses:
+        "200":
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          available:
+                            type: number
+                          status_code:
+                            type: number
+                            description: ""
+                          execute_time:
+                            type: number
+                            description: ""
+                      body:
+                        type: object
+                        properties:
+                          artist_list:
+                            type: array
+                            description: A list of artists
+                            items:
+                              type: object
+                              properties:
+                                artist:
+                                  $ref: '#/components/schemas/Artist'
+      security:
+      - key: []
+components:
+  schemas:
+    Artist:
+      title: a Artist object
+      type: object
+      properties:
+        artist_credits:
+          type: object
+          properties:
+            artist_list:
+              type: array
+              items:
+                type: string
+                description: ""
+        artist_mbid:
+          type: string
+          description: ""
+        artist_name:
+          type: string
+          description: ""
+        secondary_genres:
+          type: object
+          properties:
+            music_genre_list:
+              type: array
+              items:
+                type: string
+                description: ""
+        artist_alias_list:
+          type: array
+          items:
+            type: object
+            properties:
+              artist_alias:
+                type: string
+                description: ""
+        artist_vanity_id:
+          type: string
+          description: ""
+        restricted:
+          type: number
+          description: ""
+        artist_country:
+          type: string
+          description: ""
+        artist_comment:
+          type: string
+          description: ""
+        artist_name_translation_list:
+          type: array
+          items:
+            type: object
+            properties:
+              artist_name_translation:
+                type: object
+                properties:
+                  language:
+                    type: string
+                    description: ""
+                  translation:
+                    type: string
+                    description: ""
+        artist_edit_url:
+          type: string
+          description: ""
+        artist_share_url:
+          type: string
+          description: ""
+        artist_id:
+          type: number
+          description: ""
+        updated_time:
+          type: string
+          description: ""
+        managed:
+          type: number
+          description: ""
+        primary_genres:
+          type: object
+          properties:
+            music_genre_list:
+              type: array
+              items:
+                type: object
+                properties:
+                  music_genre:
+                    type: object
+                    properties:
+                      music_genre_parent_id:
+                        type: number
+                        description: ""
+                      music_genre_name:
+                        type: string
+                        description: ""
+                      music_genre_vanity:
+                        type: string
+                        description: ""
+                      music_genre_id:
+                        type: number
+                        description: ""
+                      music_genre_name_extended:
+                        type: string
+                        description: ""
+        artist_twitter_url:
+          type: string
+          description: ""
+        artist_rating:
+          type: number
+          description: ""
+      description: a artist in the Musixmatch database.
+    Subtitle:
+      title: a Subtitle object
+      type: object
+      properties:
+        subtitle_body:
+          type: string
+          description: ""
+        publisher_list:
+          type: array
+          items:
+            type: string
+            description: ""
+        subtitle_language:
+          type: string
+          description: ""
+        subtitle_language_description:
+          type: string
+          description: ""
+        subtitle_id:
+          type: number
+          description: ""
+        pixel_tracking_url:
+          type: string
+          description: ""
+        html_tracking_url:
+          type: string
+          description: ""
+        restricted:
+          type: number
+          description: ""
+        lyrics_copyright:
+          type: string
+          description: ""
+        script_tracking_url:
+          type: string
+          description: ""
+        subtitle_length:
+          type: number
+          description: ""
+        updated_time:
+          type: string
+          description: ""
+        writer_list:
+          type: array
+          items:
+            type: string
+            description: ""
+      description: a synchronized lyrics subtitle in the Musixmatch database.
+    Album:
+      title: a Album object
+      type: object
+      properties:
+        album_coverart_500x500:
+          type: string
+          description: ""
+        restricted:
+          type: number
+          description: ""
+        artist_id:
+          type: number
+          description: ""
+        album_name:
+          type: string
+          description: ""
+        album_coverart_800x800:
+          type: string
+          description: ""
+        album_copyright:
+          type: string
+          description: ""
+        album_coverart_350x350:
+          type: string
+          description: ""
+        artist_name:
+          type: string
+          description: ""
+        primary_genres:
+          type: object
+          properties:
+            music_genre_list:
+              type: array
+              items:
+                type: object
+                properties:
+                  music_genre:
+                    type: object
+                    properties:
+                      music_genre_name_extended:
+                        type: string
+                        description: ""
+                      music_genre_vanity:
+                        type: string
+                        description: ""
+                      music_genre_parent_id:
+                        type: number
+                        description: ""
+                      music_genre_id:
+                        type: number
+                        description: ""
+                      music_genre_name:
+                        type: string
+                        description: ""
+        album_id:
+          type: number
+          description: ""
+        album_rating:
+          type: number
+          description: ""
+        album_pline:
+          type: string
+          description: ""
+        album_track_count:
+          type: number
+          description: ""
+        album_release_type:
+          type: string
+          description: ""
+        album_release_date:
+          type: string
+          description: ""
+        album_edit_url:
+          type: string
+          description: ""
+        updated_time:
+          type: string
+          description: ""
+        secondary_genres:
+          type: object
+          properties:
+            music_genre_list:
+              type: array
+              items:
+                type: string
+                description: ""
+        album_mbid:
+          type: string
+          description: ""
+        album_vanity_id:
+          type: string
+          description: ""
+        album_coverart_100x100:
+          type: string
+          description: ""
+        album_label:
+          type: string
+          description: ""
+      description: a album of songs in the Musixmatch database.
+    Track:
+      title: a Track object
+      type: object
+      properties:
+        instrumental:
+          type: number
+          description: ""
+        album_coverart_350x350:
+          type: string
+          description: ""
+        first_release_date:
+          type: string
+          description: ""
+        track_isrc:
+          type: string
+          description: ""
+        explicit:
+          type: number
+          description: ""
+        track_edit_url:
+          type: string
+          description: ""
+        num_favourite:
+          type: number
+          description: ""
+        album_coverart_500x500:
+          type: string
+          description: ""
+        album_name:
+          type: string
+          description: ""
+        track_rating:
+          type: number
+          description: ""
+        track_share_url:
+          type: string
+          description: ""
+        track_soundcloud_id:
+          type: number
+          description: ""
+        artist_name:
+          type: string
+          description: ""
+        album_coverart_800x800:
+          type: string
+          description: ""
+        album_coverart_100x100:
+          type: string
+          description: ""
+        track_name_translation_list:
+          type: array
+          items:
+            type: string
+            description: ""
+        track_name:
+          type: string
+          description: ""
+        restricted:
+          type: number
+          description: ""
+        has_subtitles:
+          type: number
+          description: ""
+        updated_time:
+          type: string
+          description: ""
+        subtitle_id:
+          type: number
+          description: ""
+        lyrics_id:
+          type: number
+          description: ""
+        track_spotify_id:
+          type: string
+          description: ""
+        has_lyrics:
+          type: number
+          description: ""
+        artist_id:
+          type: number
+          description: ""
+        album_id:
+          type: number
+          description: ""
+        artist_mbid:
+          type: string
+          description: ""
+        secondary_genres:
+          type: object
+          properties:
+            music_genre_list:
+              type: array
+              items:
+                type: object
+                properties:
+                  music_genre:
+                    type: object
+                    properties:
+                      music_genre_vanity:
+                        type: string
+                        description: ""
+                      music_genre_name_extended:
+                        type: string
+                        description: ""
+                      music_genre_parent_id:
+                        type: number
+                        description: ""
+                      music_genre_name:
+                        type: string
+                        description: ""
+                      music_genre_id:
+                        type: number
+                        description: ""
+        commontrack_vanity_id:
+          type: string
+          description: ""
+        track_id:
+          type: number
+          description: ""
+        track_xboxmusic_id:
+          type: string
+          description: ""
+        primary_genres:
+          type: object
+          properties:
+            music_genre_list:
+              type: array
+              items:
+                type: object
+                properties:
+                  music_genre:
+                    type: object
+                    properties:
+                      music_genre_vanity:
+                        type: string
+                        description: ""
+                      music_genre_name_extended:
+                        type: string
+                        description: ""
+                      music_genre_name:
+                        type: string
+                        description: ""
+                      music_genre_parent_id:
+                        type: number
+                        description: ""
+                      music_genre_id:
+                        type: number
+                        description: ""
+        track_length:
+          type: number
+          description: ""
+        track_mbid:
+          type: string
+          description: ""
+        commontrack_id:
+          type: number
+          description: ""
+      description: a song in the Musixmatch database
+    Lyrics:
+      title: a Lyrics object
+      type: object
+      properties:
+        instrumental:
+          type: number
+          description: ""
+        pixel_tracking_url:
+          type: string
+          description: ""
+        publisher_list:
+          type: array
+          items:
+            type: string
+            description: ""
+        lyrics_language_description:
+          type: string
+          description: ""
+        restricted:
+          type: number
+          description: ""
+        updated_time:
+          type: string
+          description: ""
+        explicit:
+          type: number
+          description: ""
+        lyrics_copyright:
+          type: string
+          description: ""
+        html_tracking_url:
+          type: string
+          description: ""
+        lyrics_language:
+          type: string
+          description: ""
+        script_tracking_url:
+          type: string
+          description: ""
+        verified:
+          type: number
+          description: ""
+        lyrics_body:
+          type: string
+          description: ""
+        lyrics_id:
+          type: number
+          description: ""
+        writer_list:
+          type: array
+          items:
+            type: string
+            description: ""
+        can_edit:
+          type: number
+          description: ""
+        action_requested:
+          type: string
+          description: ""
+        locked:
+          type: number
+          description: ""
+      description: a Lyrics in the Musixmatch database.
+    Snippet:
+      title: a Snippet object
+      type: object
+      properties:
+        html_tracking_url:
+          type: string
+          description: ""
+        instrumental:
+          type: number
+          description: ""
+        restricted:
+          type: number
+          description: ""
+        updated_time:
+          type: string
+          description: ""
+        snippet_body:
+          type: string
+          description: ""
+        pixel_tracking_url:
+          type: string
+          description: ""
+        snippet_id:
+          type: number
+          description: ""
+        script_tracking_url:
+          type: string
+          description: ""
+        snippet_language:
+          type: string
+          description: ""
+      description: Snippet of lyrics text in the Musixmatch database.
+  securitySchemes:
+    key:
+      type: apiKey
+      name: apikey
+      in: query
+x-original-swagger-version: "2.0"
