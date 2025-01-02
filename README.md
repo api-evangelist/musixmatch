@@ -36,12 +36,12 @@ you to search and retrieve lyrics in the simplest possible way.
 
 #### Tags:
 
- - No Tags
+ - Track, Album, Artist, Subtitle, Lyrics, Snippets
 
 #### Properties
 
 - [Documentation](https://developer.musixmatch.com/documentation)
-- [OpenAPI](openapi/musixmatch-openapi-original.yml)
+- [OpenAPI](properties/musixmatch-api-openapi.yml)
 
 ## Common Properties
 
