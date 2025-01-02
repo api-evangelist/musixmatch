@@ -5,14 +5,20 @@ url: >-
 apis:
   - aid: musixmatch:musixmatch-api
     name: Musixmatch API
-    tags: []
+    tags:
+      - Track
+      - Album
+      - Artist
+      - Subtitle
+      - Lyrics
+      - Snippets
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.musixmatch.com/ws/1.1/
     humanURL: https://developer.musixmatch.com/documentation
     properties:
       - url: https://developer.musixmatch.com/documentation
         type: Documentation
-      - url: openapi/musixmatch-openapi-original.yml
+      - url: properties/musixmatch-api-openapi.yml
         type: OpenAPI
     description: |-
 
