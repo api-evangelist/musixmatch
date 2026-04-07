@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Musixmatch API
-  description: |-
+  description: |2-
 
     The most powerful and legal way to display lyrics on your website or in
     your application. Musixmatch lyrics API is a robust service that permits
@@ -23,17 +23,16 @@ servers:
 security:
   - key: []
 tags:
-  - name: Track
+  - name: Album
     description: ''
   - name: Artist
     description: ''
-  - name: Album
-    description: ''
   - name: Lyrics
     description: ''
+  - name: Snippets
   - name: Subtitle
     description: ''
-  - name: Snippet
+  - name: Track
     description: ''
 paths:
   /album.tracks.get:
@@ -861,8 +860,7 @@ paths:
         - name: quorum_factor
           in: query
           description: >-
-            Search only a part of the given query string.Allowed range is (0.1 
-            0.9)
+            Search only a part of the given query string.Allowed range is (0.1  0.9)
           schema:
             type: number
             default: 1

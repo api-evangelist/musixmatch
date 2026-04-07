@@ -11,19 +11,19 @@ created: '2024-06-07'
 modified: '2026-03-16'
 specificationVersion: '0.19'
 tags:
-  - Music
   - Lyrics
+  - Music
   - Translations
 apis:
   - aid: musixmatch:musixmatch-api
     name: Musixmatch API
     tags:
-      - Track
       - Album
       - Artist
-      - Subtitle
       - Lyrics
       - Snippets
+      - Subtitle
+      - Track
     image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.musixmatch.com/ws/1.1/
     humanURL: https://developer.musixmatch.com/documentation
