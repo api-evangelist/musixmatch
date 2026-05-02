@@ -19,7 +19,7 @@ https://raw.githubusercontent.com/api-search/music/main/_apis/musixmatch/apis.md
 ## Timestamps
 
 - **Created:** 2024-06-07 
-- **Modified:** 2025-01-02 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
@@ -41,7 +41,7 @@ you to search and retrieve lyrics in the simplest possible way.
 #### Properties
 
 - [Documentation](https://developer.musixmatch.com/documentation)
-- [OpenAPI](properties/musixmatch-api-openapi.yml)
+- [OpenAPI](openapi/musixmatch-openapi-original.yml)
 
 ## Common Properties
 

@@ -8,7 +8,7 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://developer.musixmatch.com/
 created: '2024-06-07'
-modified: '2026-03-16'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 tags:
   - Lyrics
@@ -30,6 +30,8 @@ apis:
     properties:
       - url: https://developer.musixmatch.com/documentation
         type: Documentation
+      - url: openapi/musixmatch-openapi-original.yml
+        type: OpenAPI
     description: >-
       The most powerful and legal way to display lyrics on your website or in
       your application. Musixmatch lyrics API is a robust service that permits
