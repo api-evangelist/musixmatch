@@ -44,7 +44,7 @@ common:
   - url: https://blog.musixmatch.com/
     type: Blog
   - url: https://about.musixmatch.com/privacy-policy
-    type: Privacy Policy
+    type: PrivacyPolicy
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
