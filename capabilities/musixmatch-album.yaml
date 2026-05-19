@@ -1,0 +1,172 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Musixmatch API — Album
+  description: 'Musixmatch API — Album. 2 operations. Lead operation: Album. Self-contained Naftiko capability covering one
+    Musixmatch business surface.'
+  tags:
+  - Musixmatch
+  - Album
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MUSIXMATCH_API_KEY: MUSIXMATCH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: musixmatch-album
+    baseUri: https://api.musixmatch.com/ws/1.1
+    description: Musixmatch API — Album business capability. Self-contained, no shared references.
+    resources:
+    - name: album.get
+      path: /album.get
+      operations:
+      - name: get
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+          description: 'output format: json, jsonp, xml.'
+        - name: callback
+          in: query
+          type: string
+          description: jsonp callback
+        - name: album_id
+          in: query
+          type: string
+          description: The musiXmatch album id
+          required: true
+    - name: artist.albums.get
+      path: /artist.albums.get
+      operations:
+      - name: get
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+          description: 'output format: json, jsonp, xml.'
+        - name: callback
+          in: query
+          type: string
+          description: jsonp callback
+        - name: artist_id
+          in: query
+          type: string
+          description: The musiXmatch artist id
+          required: true
+        - name: s_release_date
+          in: query
+          type: string
+          description: Sort by release date (asc|desc)
+        - name: g_album_name
+          in: query
+          type: string
+          description: Group by Album Name
+        - name: page_size
+          in: query
+          type: number
+          description: Define the page size for paginated results.Range is 1 to 100.
+        - name: page
+          in: query
+          type: number
+          description: Define the page number for paginated results
+    authentication:
+      type: apikey
+      key: apikey
+      value: '{{env.MUSIXMATCH_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: musixmatch-album-rest
+    port: 8080
+    description: REST adapter for Musixmatch API — Album. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/album-get
+      name: album-get
+      description: REST surface for album.get.
+      operations:
+      - method: GET
+        name: get
+        description: get
+        call: musixmatch-album.get
+        with:
+          format: rest.format
+          callback: rest.callback
+          album_id: rest.album_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/artist-albums-get
+      name: artist-albums-get
+      description: REST surface for artist.albums.get.
+      operations:
+      - method: GET
+        name: get
+        description: get
+        call: musixmatch-album.get
+        with:
+          format: rest.format
+          callback: rest.callback
+          artist_id: rest.artist_id
+          s_release_date: rest.s_release_date
+          g_album_name: rest.g_album_name
+          page_size: rest.page_size
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: musixmatch-album-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Musixmatch API — Album. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get
+      description: get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: musixmatch-album.get
+      with:
+        format: tools.format
+        callback: tools.callback
+        album_id: tools.album_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-2
+      description: get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: musixmatch-album.get
+      with:
+        format: tools.format
+        callback: tools.callback
+        artist_id: tools.artist_id
+        s_release_date: tools.s_release_date
+        g_album_name: tools.g_album_name
+        page_size: tools.page_size
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.

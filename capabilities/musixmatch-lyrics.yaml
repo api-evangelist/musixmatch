@@ -1,0 +1,153 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Musixmatch API — Lyrics
+  description: 'Musixmatch API — Lyrics. 2 operations. Lead operation: Lyrics. Self-contained Naftiko capability covering
+    one Musixmatch business surface.'
+  tags:
+  - Musixmatch
+  - Lyrics
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MUSIXMATCH_API_KEY: MUSIXMATCH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: musixmatch-lyrics
+    baseUri: https://api.musixmatch.com/ws/1.1
+    description: Musixmatch API — Lyrics business capability. Self-contained, no shared references.
+    resources:
+    - name: matcher.lyrics.get
+      path: /matcher.lyrics.get
+      operations:
+      - name: get
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+          description: 'output format: json, jsonp, xml.'
+        - name: callback
+          in: query
+          type: string
+          description: jsonp callback
+        - name: q_track
+          in: query
+          type: string
+          description: The song title
+        - name: q_artist
+          in: query
+          type: string
+          description: The song artist
+    - name: track.lyrics.get
+      path: /track.lyrics.get
+      operations:
+      - name: get
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+          description: 'output format: json, jsonp, xml.'
+        - name: callback
+          in: query
+          type: string
+          description: jsonp callback
+        - name: track_id
+          in: query
+          type: string
+          description: The musiXmatch track id
+          required: true
+    authentication:
+      type: apikey
+      key: apikey
+      value: '{{env.MUSIXMATCH_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: musixmatch-lyrics-rest
+    port: 8080
+    description: REST adapter for Musixmatch API — Lyrics. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/matcher-lyrics-get
+      name: matcher-lyrics-get
+      description: REST surface for matcher.lyrics.get.
+      operations:
+      - method: GET
+        name: get
+        description: get
+        call: musixmatch-lyrics.get
+        with:
+          format: rest.format
+          callback: rest.callback
+          q_track: rest.q_track
+          q_artist: rest.q_artist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/track-lyrics-get
+      name: track-lyrics-get
+      description: REST surface for track.lyrics.get.
+      operations:
+      - method: GET
+        name: get
+        description: get
+        call: musixmatch-lyrics.get
+        with:
+          format: rest.format
+          callback: rest.callback
+          track_id: rest.track_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: musixmatch-lyrics-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Musixmatch API — Lyrics. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get
+      description: get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: musixmatch-lyrics.get
+      with:
+        format: tools.format
+        callback: tools.callback
+        q_track: tools.q_track
+        q_artist: tools.q_artist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-2
+      description: get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: musixmatch-lyrics.get
+      with:
+        format: tools.format
+        callback: tools.callback
+        track_id: tools.track_id
+      outputParameters:
+      - type: object
+        mapping: $.

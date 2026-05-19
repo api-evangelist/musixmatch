@@ -1,0 +1,427 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Musixmatch API — Track
+  description: 'Musixmatch API — Track. 5 operations. Lead operation: Track. Self-contained Naftiko capability covering one
+    Musixmatch business surface.'
+  tags:
+  - Musixmatch
+  - Track
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MUSIXMATCH_API_KEY: MUSIXMATCH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: musixmatch-track
+    baseUri: https://api.musixmatch.com/ws/1.1
+    description: Musixmatch API — Track business capability. Self-contained, no shared references.
+    resources:
+    - name: album.tracks.get
+      path: /album.tracks.get
+      operations:
+      - name: get
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+          description: 'output format: json, jsonp, xml.'
+        - name: callback
+          in: query
+          type: string
+          description: jsonp callback
+        - name: album_id
+          in: query
+          type: string
+          description: The musiXmatch album id
+          required: true
+        - name: f_has_lyrics
+          in: query
+          type: string
+          description: When set, filter only contents with lyrics
+        - name: page
+          in: query
+          type: number
+          description: Define the page number for paginated results
+        - name: page_size
+          in: query
+          type: number
+          description: Define the page size for paginated results.Range is 1 to 100.
+    - name: chart.tracks.get
+      path: /chart.tracks.get
+      operations:
+      - name: get
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+          description: 'output format: json, jsonp, xml.'
+        - name: callback
+          in: query
+          type: string
+          description: jsonp callback
+        - name: page
+          in: query
+          type: number
+          description: Define the page number for paginated results
+        - name: page_size
+          in: query
+          type: number
+          description: Define the page size for paginated results.Range is 1 to 100.
+        - name: country
+          in: query
+          type: string
+          description: A valid ISO 3166 country code
+        - name: f_has_lyrics
+          in: query
+          type: string
+          description: When set, filter only contents with lyrics
+    - name: matcher.track.get
+      path: /matcher.track.get
+      operations:
+      - name: get
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+          description: 'output format: json, jsonp, xml.'
+        - name: callback
+          in: query
+          type: string
+          description: jsonp callback
+        - name: q_artist
+          in: query
+          type: string
+          description: The song artist
+        - name: q_track
+          in: query
+          type: string
+          description: The song title
+        - name: f_has_lyrics
+          in: query
+          type: number
+          description: When set, filter only contents with lyrics
+        - name: f_has_subtitle
+          in: query
+          type: number
+          description: When set, filter only contents with subtitles
+    - name: track.get
+      path: /track.get
+      operations:
+      - name: get
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+          description: 'output format: json, jsonp, xml.'
+        - name: callback
+          in: query
+          type: string
+          description: jsonp callback
+        - name: track_id
+          in: query
+          type: string
+          description: The musiXmatch track id
+          required: true
+    - name: track.search
+      path: /track.search
+      operations:
+      - name: get
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: format
+          in: query
+          type: string
+          description: 'output format: json, jsonp, xml.'
+        - name: callback
+          in: query
+          type: string
+          description: jsonp callback
+        - name: q_track
+          in: query
+          type: string
+          description: The song title
+        - name: q_artist
+          in: query
+          type: string
+          description: The song artist
+        - name: q_lyrics
+          in: query
+          type: string
+          description: Any word in the lyrics
+        - name: f_artist_id
+          in: query
+          type: number
+          description: When set, filter by this artist id
+        - name: f_music_genre_id
+          in: query
+          type: number
+          description: When set, filter by this music category id
+        - name: f_lyrics_language
+          in: query
+          type: number
+          description: Filter by the lyrics language (en,it,..)
+        - name: f_has_lyrics
+          in: query
+          type: number
+          description: When set, filter only contents with lyrics
+        - name: s_artist_rating
+          in: query
+          type: string
+          description: Sort by our popularity index for artists (asc|desc)
+        - name: s_track_rating
+          in: query
+          type: string
+          description: Sort by our popularity index for tracks (asc|desc)
+        - name: quorum_factor
+          in: query
+          type: number
+          description: Search only a part of the given query string.Allowed range is (0.1  0.9)
+        - name: page_size
+          in: query
+          type: number
+          description: Define the page size for paginated results.Range is 1 to 100.
+        - name: page
+          in: query
+          type: number
+          description: Define the page number for paginated results
+    authentication:
+      type: apikey
+      key: apikey
+      value: '{{env.MUSIXMATCH_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: musixmatch-track-rest
+    port: 8080
+    description: REST adapter for Musixmatch API — Track. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/album-tracks-get
+      name: album-tracks-get
+      description: REST surface for album.tracks.get.
+      operations:
+      - method: GET
+        name: get
+        description: get
+        call: musixmatch-track.get
+        with:
+          format: rest.format
+          callback: rest.callback
+          album_id: rest.album_id
+          f_has_lyrics: rest.f_has_lyrics
+          page: rest.page
+          page_size: rest.page_size
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/chart-tracks-get
+      name: chart-tracks-get
+      description: REST surface for chart.tracks.get.
+      operations:
+      - method: GET
+        name: get
+        description: get
+        call: musixmatch-track.get
+        with:
+          format: rest.format
+          callback: rest.callback
+          page: rest.page
+          page_size: rest.page_size
+          country: rest.country
+          f_has_lyrics: rest.f_has_lyrics
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/matcher-track-get
+      name: matcher-track-get
+      description: REST surface for matcher.track.get.
+      operations:
+      - method: GET
+        name: get
+        description: get
+        call: musixmatch-track.get
+        with:
+          format: rest.format
+          callback: rest.callback
+          q_artist: rest.q_artist
+          q_track: rest.q_track
+          f_has_lyrics: rest.f_has_lyrics
+          f_has_subtitle: rest.f_has_subtitle
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/track-get
+      name: track-get
+      description: REST surface for track.get.
+      operations:
+      - method: GET
+        name: get
+        description: get
+        call: musixmatch-track.get
+        with:
+          format: rest.format
+          callback: rest.callback
+          track_id: rest.track_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/track-search
+      name: track-search
+      description: REST surface for track.search.
+      operations:
+      - method: GET
+        name: get
+        description: get
+        call: musixmatch-track.get
+        with:
+          format: rest.format
+          callback: rest.callback
+          q_track: rest.q_track
+          q_artist: rest.q_artist
+          q_lyrics: rest.q_lyrics
+          f_artist_id: rest.f_artist_id
+          f_music_genre_id: rest.f_music_genre_id
+          f_lyrics_language: rest.f_lyrics_language
+          f_has_lyrics: rest.f_has_lyrics
+          s_artist_rating: rest.s_artist_rating
+          s_track_rating: rest.s_track_rating
+          quorum_factor: rest.quorum_factor
+          page_size: rest.page_size
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: musixmatch-track-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Musixmatch API — Track. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get
+      description: get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: musixmatch-track.get
+      with:
+        format: tools.format
+        callback: tools.callback
+        album_id: tools.album_id
+        f_has_lyrics: tools.f_has_lyrics
+        page: tools.page
+        page_size: tools.page_size
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-2
+      description: get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: musixmatch-track.get
+      with:
+        format: tools.format
+        callback: tools.callback
+        page: tools.page
+        page_size: tools.page_size
+        country: tools.country
+        f_has_lyrics: tools.f_has_lyrics
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-3
+      description: get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: musixmatch-track.get
+      with:
+        format: tools.format
+        callback: tools.callback
+        q_artist: tools.q_artist
+        q_track: tools.q_track
+        f_has_lyrics: tools.f_has_lyrics
+        f_has_subtitle: tools.f_has_subtitle
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-4
+      description: get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: musixmatch-track.get
+      with:
+        format: tools.format
+        callback: tools.callback
+        track_id: tools.track_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-5
+      description: get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: musixmatch-track.get
+      with:
+        format: tools.format
+        callback: tools.callback
+        q_track: tools.q_track
+        q_artist: tools.q_artist
+        q_lyrics: tools.q_lyrics
+        f_artist_id: tools.f_artist_id
+        f_music_genre_id: tools.f_music_genre_id
+        f_lyrics_language: tools.f_lyrics_language
+        f_has_lyrics: tools.f_has_lyrics
+        s_artist_rating: tools.s_artist_rating
+        s_track_rating: tools.s_track_rating
+        quorum_factor: tools.quorum_factor
+        page_size: tools.page_size
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.
