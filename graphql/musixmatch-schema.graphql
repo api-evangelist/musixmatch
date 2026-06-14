@@ -1,0 +1,639 @@
+"""
+Musixmatch GraphQL Schema
+Conceptual schema derived from the Musixmatch REST API (https://developer.musixmatch.com/documentation).
+This schema represents the data model for lyrics, tracks, artists, albums, and related music metadata.
+"""
+
+# ─────────────────────────────────────────────
+# Scalars
+# ─────────────────────────────────────────────
+
+scalar DateTime
+scalar JSON
+
+# ─────────────────────────────────────────────
+# Enums
+# ─────────────────────────────────────────────
+
+enum SearchType {
+  TRACK
+  ARTIST
+  ALBUM
+  LYRICS
+}
+
+enum SubtitleFormat {
+  LRC
+  DFXP
+  STLEDU
+  MXMID
+}
+
+enum ChartType {
+  TRACKS
+  ARTISTS
+}
+
+enum TranslationLanguage {
+  EN
+  ES
+  FR
+  DE
+  IT
+  PT
+  JA
+  ZH
+  KO
+  RU
+  AR
+  NL
+  PL
+  SV
+  TR
+}
+
+# ─────────────────────────────────────────────
+# Track Types
+# ─────────────────────────────────────────────
+
+type Track {
+  trackId: ID!
+  trackMbid: String
+  trackSpotifyId: String
+  trackName: String
+  trackNameTranslationList: [TrackNameTranslation]
+  trackRating: TrackRating
+  trackLength: Int
+  trackLyrics: TrackLyrics
+  trackSubtitle: TrackSubtitle
+  trackSnippet: TrackSnippet
+  trackGenres: TrackGenres
+  trackShareUrl: String
+  trackEditUrl: String
+  restricted: Boolean
+  hasLyrics: Boolean
+  hasSubtitles: Boolean
+  hasRichsync: Boolean
+  lyricsId: ID
+  subtitleId: ID
+  albumId: ID
+  album: Album
+  artistId: ID
+  artist: Artist
+  releaseDate: DateTime
+  updatedTime: DateTime
+}
+
+type TrackDetails {
+  track: Track
+  message: StatusCode
+}
+
+type TrackRating {
+  trackId: ID!
+  rating: Int
+  ratingNormalized: Float
+  communityRating: Float
+  editorialRating: Float
+}
+
+type TrackLyrics {
+  lyricsId: ID!
+  trackId: ID
+  lyricsBody: String
+  scriptTrackingUrl: String
+  pixelTrackingUrl: String
+  lyricsLanguage: LyricsLanguage
+  lyricsExplicit: LyricsExplicit
+  lyricsCopyright: LyricsCopyright
+  lyricsScore: LyricsScore
+  publisherList: [String]
+  backlink: String
+  restricted: Boolean
+  updatedTime: DateTime
+}
+
+type TrackSnippet {
+  snippetId: ID!
+  trackId: ID
+  snippet: Snippet
+  restricted: Boolean
+  updatedTime: DateTime
+}
+
+type TrackSubtitle {
+  subtitleId: ID!
+  trackId: ID
+  subtitle: Subtitle
+  restricted: Boolean
+  updatedTime: DateTime
+}
+
+type TrackGenres {
+  musicGenreList: [GenreDetails]
+}
+
+type TrackId {
+  commontrack_id: ID!
+  track_spotify_id: String
+  track_isrc: String
+  track_mbid: String
+  commontrack_vanity_id: String
+}
+
+type TrackNameTranslation {
+  trackNameTranslation: TrackNameTranslationValue
+}
+
+type TrackNameTranslationValue {
+  language: String
+  translation: String
+}
+
+# ─────────────────────────────────────────────
+# Artist Types
+# ─────────────────────────────────────────────
+
+type Artist {
+  artistId: ID!
+  artistMbid: String
+  artistSpotifyId: String
+  artistName: String
+  artistNameTranslationList: [ArtistNameTranslation]
+  artistRating: ArtistRating
+  artistAlias: ArtistAlias
+  artistCountry: ArtistCountry
+  artistImage: ArtistImage
+  artistTwitterUrl: String
+  artistShareUrl: String
+  artistEditUrl: String
+  restricted: Boolean
+  updatedTime: DateTime
+}
+
+type ArtistDetails {
+  artist: Artist
+  message: StatusCode
+}
+
+type ArtistRating {
+  artistId: ID!
+  rating: Int
+  ratingNormalized: Float
+  communityRating: Float
+  editorialRating: Float
+}
+
+type ArtistAlias {
+  musicArtistAliasList: [ArtistAliasItem]
+}
+
+type ArtistAliasItem {
+  musicArtistAlias: String
+}
+
+type ArtistCountry {
+  artistCountryCode: String
+  artistCountryName: String
+}
+
+type ArtistImage {
+  artistImageUrl: String
+  artistImageThumbnailUrl: String
+}
+
+type ArtistNameTranslation {
+  artistNameTranslation: ArtistNameTranslationValue
+}
+
+type ArtistNameTranslationValue {
+  language: String
+  translation: String
+}
+
+# ─────────────────────────────────────────────
+# Album Types
+# ─────────────────────────────────────────────
+
+type Album {
+  albumId: ID!
+  albumMbid: String
+  albumVanityId: String
+  albumName: String
+  albumRating: AlbumRating
+  albumGenres: AlbumGenres
+  albumTrackCount: Int
+  albumReleaseDateFormatted: String
+  albumReleaseType: String
+  albumLabel: String
+  albumCoverart100x100: String
+  albumCoverart350x350: String
+  albumCoverart500x500: String
+  albumCoverart800x800: String
+  albumEditUrl: String
+  artistId: ID
+  artist: Artist
+  restricted: Boolean
+  updatedTime: DateTime
+}
+
+type AlbumDetails {
+  album: Album
+  message: StatusCode
+}
+
+type AlbumRating {
+  albumId: ID!
+  rating: Int
+  ratingNormalized: Float
+  communityRating: Float
+  editorialRating: Float
+}
+
+type AlbumGenres {
+  musicGenreList: [GenreDetails]
+}
+
+# ─────────────────────────────────────────────
+# Lyrics Types
+# ─────────────────────────────────────────────
+
+type Lyrics {
+  lyricsId: ID!
+  lyricsBody: String
+  scriptTrackingUrl: String
+  pixelTrackingUrl: String
+  lyricsLanguage: LyricsLanguage
+  lyricsExplicit: LyricsExplicit
+  lyricsCopyright: LyricsCopyright
+  lyricsScore: LyricsScore
+  publisherList: [String]
+  backlink: String
+  restricted: Boolean
+  verified: Boolean
+  updatedTime: DateTime
+}
+
+type LyricsDetails {
+  lyrics: Lyrics
+  message: StatusCode
+}
+
+type LyricsLanguage {
+  lyricsLanguage: String
+  lyricsLanguageDescription: String
+}
+
+type LyricsExplicit {
+  isExplicit: Boolean
+  hasExplicitContent: Boolean
+}
+
+type LyricsCopyright {
+  cLine: String
+  pLine: String
+  copyRight: String
+  writerList: [LyricsWriter]
+}
+
+type LyricsWriter {
+  name: String
+  role: String
+}
+
+type LyricsScore {
+  lyricsScore: Float
+  lyricsType: String
+}
+
+# ─────────────────────────────────────────────
+# Subtitle Types
+# ─────────────────────────────────────────────
+
+type Subtitle {
+  subtitleId: ID!
+  restrictedLine: Int
+  publisherList: [String]
+  subtitleBody: String
+  subtitleLanguage: String
+  subtitleLanguageDescription: String
+  scriptTrackingUrl: String
+  pixelTrackingUrl: String
+  restricted: Boolean
+  updatedTime: DateTime
+}
+
+type SubtitleDetails {
+  subtitle: Subtitle
+  subtitleFormat: SubtitleFormat
+  message: StatusCode
+}
+
+# ─────────────────────────────────────────────
+# Snippet Types
+# ─────────────────────────────────────────────
+
+type Snippet {
+  snippetId: ID!
+  snippetBody: String
+  snippetLanguage: String
+  scriptTrackingUrl: String
+  pixelTrackingUrl: String
+  restricted: Boolean
+  updatedTime: DateTime
+}
+
+type SnippetDetails {
+  snippet: Snippet
+  message: StatusCode
+}
+
+# ─────────────────────────────────────────────
+# Genre Types
+# ─────────────────────────────────────────────
+
+type Genre {
+  musicGenreId: ID!
+  musicGenreName: String
+  musicGenreNameExtended: String
+  musicGenreVanity: String
+  musicGenreParentId: ID
+  musicGenreParent: GenreParent
+}
+
+type GenreDetails {
+  musicGenre: Genre
+}
+
+type GenreParent {
+  musicGenreId: ID!
+  musicGenreName: String
+  musicGenreNameExtended: String
+  musicGenreVanity: String
+}
+
+# ─────────────────────────────────────────────
+# Translation Types
+# ─────────────────────────────────────────────
+
+type Translation {
+  translationId: ID!
+  type: String
+  description: String
+  body: String
+  language: TranslationLanguage
+  selectedLanguage: String
+  url: String
+  urlSource: String
+}
+
+type TranslationDetails {
+  translation: Translation
+  message: StatusCode
+}
+
+# ─────────────────────────────────────────────
+# Catalog Types
+# ─────────────────────────────────────────────
+
+type Catalog {
+  catalogId: ID!
+  catalogName: String
+  catalogType: String
+  catalogLanguage: String
+  catalogCountry: String
+  catalogUrl: String
+  restricted: Boolean
+  updatedTime: DateTime
+}
+
+type CatalogDetails {
+  catalog: Catalog
+  message: StatusCode
+}
+
+# ─────────────────────────────────────────────
+# Search Types
+# ─────────────────────────────────────────────
+
+type Search {
+  query: SearchQuery
+  searchType: SearchType
+  results: SearchResults
+  pageInfo: PageInfo
+}
+
+type SearchQuery {
+  q: String
+  qTrack: String
+  qArtist: String
+  qAlbum: String
+  qLyrics: String
+  qArtistId: ID
+  qAlbumId: ID
+  qTrackId: ID
+}
+
+type SearchResults {
+  trackResults: TrackResults
+  artistResults: ArtistResults
+  albumResults: AlbumResults
+}
+
+type TrackResults {
+  trackList: [Track]
+  total: Int
+}
+
+type ArtistResults {
+  artistList: [Artist]
+  total: Int
+}
+
+type AlbumResults {
+  albumList: [Album]
+  total: Int
+}
+
+# ─────────────────────────────────────────────
+# Chart Types
+# ─────────────────────────────────────────────
+
+type ChartTrack {
+  chartId: ID!
+  chartName: String
+  chartRankUrl: String
+  country: String
+  chartTrackList: [ChartTrackItem]
+  updatedTime: DateTime
+}
+
+type ChartTrackItem {
+  position: Int
+  track: Track
+  chartEntryDate: DateTime
+  chartEntryDelta: Int
+}
+
+type ChartArtist {
+  chartId: ID!
+  chartName: String
+  country: String
+  chartArtistList: [ChartArtistItem]
+  updatedTime: DateTime
+}
+
+type ChartArtistItem {
+  position: Int
+  artist: Artist
+  chartEntryDate: DateTime
+  chartEntryDelta: Int
+}
+
+# ─────────────────────────────────────────────
+# Tasteomatics / Mood Types
+# ─────────────────────────────────────────────
+
+type MoodDefinition {
+  moodId: ID!
+  moodName: String
+  moodDescription: String
+  moodValence: Float
+  moodArousal: Float
+  moodDominance: Float
+  relatedTags: [TastematicsTag]
+}
+
+type TastematicsTag {
+  tagId: ID!
+  tagName: String
+  tagDescription: String
+  tagWeight: Float
+  tagLanguage: String
+  relatedMoods: [MoodDefinition]
+  relatedTracks: [Track]
+}
+
+# ─────────────────────────────────────────────
+# Auth / Token Types
+# ─────────────────────────────────────────────
+
+type APIKey {
+  keyId: ID!
+  apiKey: String!
+  plan: String
+  rateLimit: Int
+  rateLimitPeriod: String
+  allowedEndpoints: [String]
+  createdAt: DateTime
+  expiresAt: DateTime
+}
+
+type Token {
+  tokenId: ID!
+  accessToken: String!
+  tokenType: String
+  expiresIn: Int
+  scope: String
+  issuedAt: DateTime
+}
+
+type OauthToken {
+  oauthTokenId: ID!
+  accessToken: String!
+  refreshToken: String
+  tokenType: String
+  expiresIn: Int
+  scope: String
+  userId: String
+  issuedAt: DateTime
+  refreshedAt: DateTime
+}
+
+# ─────────────────────────────────────────────
+# Pagination & Status
+# ─────────────────────────────────────────────
+
+type PageInfo {
+  page: Int
+  pageSize: Int
+  totalPages: Int
+  totalResults: Int
+  hasNextPage: Boolean
+  hasPreviousPage: Boolean
+}
+
+type StatusCode {
+  statusCode: Int
+  executeTime: Float
+  header: StatusHeader
+}
+
+type StatusHeader {
+  statusCode: Int
+  executeTime: Float
+  pid: String
+  surroundBy: Int
+  feedback: String
+  userData: JSON
+}
+
+type ErrorResponse {
+  statusCode: Int
+  errorMessage: String
+  errorDetails: String
+  hint: String
+}
+
+# ─────────────────────────────────────────────
+# Root Types
+# ─────────────────────────────────────────────
+
+type Query {
+  # Track queries
+  track(trackId: ID!): TrackDetails
+  trackByIsrc(isrc: String!): TrackDetails
+  trackLyrics(trackId: ID!, apiKey: String!): LyricsDetails
+  trackSnippet(trackId: ID!, apiKey: String!): SnippetDetails
+  trackSubtitle(trackId: ID!, subtitleFormat: SubtitleFormat, apiKey: String!): SubtitleDetails
+  trackRichsync(trackId: ID!, apiKey: String!): SnippetDetails
+  trackId(commontrackId: ID, trackIsrc: String, trackMbid: String): TrackId
+
+  # Artist queries
+  artist(artistId: ID!): ArtistDetails
+  artistAlbums(artistId: ID!, page: Int, pageSize: Int, releaseType: String, sortBy: String): [AlbumDetails]
+  artistRelated(artistId: ID!, page: Int, pageSize: Int): [ArtistDetails]
+
+  # Album queries
+  album(albumId: ID!): AlbumDetails
+  albumTracks(albumId: ID!, page: Int, pageSize: Int): [TrackDetails]
+
+  # Lyrics queries
+  lyrics(lyricsId: ID!): LyricsDetails
+  lyricsByTrack(trackId: ID!): LyricsDetails
+  lyricsTranslation(trackId: ID!, selectedLanguage: String!): [TranslationDetails]
+
+  # Search queries
+  searchTracks(query: SearchQuery!, page: Int, pageSize: Int, apiKey: String!): TrackResults
+  searchArtists(query: SearchQuery!, page: Int, pageSize: Int, apiKey: String!): ArtistResults
+  searchAlbums(query: SearchQuery!, page: Int, pageSize: Int, apiKey: String!): AlbumResults
+  search(query: SearchQuery!, searchType: SearchType, page: Int, pageSize: Int, apiKey: String!): Search
+
+  # Chart queries
+  chartTracks(country: String, chartName: String, page: Int, pageSize: Int, apiKey: String!): ChartTrack
+  chartArtists(country: String, page: Int, pageSize: Int, apiKey: String!): ChartArtist
+
+  # Genre queries
+  genre(genreId: ID!): GenreDetails
+  genres: [Genre]
+
+  # Tasteomatics / Mood queries
+  mood(moodId: ID!): MoodDefinition
+  moods: [MoodDefinition]
+  tastematicsTag(tagId: ID!): TastematicsTag
+  tastematicsTags: [TastematicsTag]
+
+  # Catalog queries
+  catalog(catalogId: ID!): CatalogDetails
+  catalogs: [CatalogDetails]
+}
