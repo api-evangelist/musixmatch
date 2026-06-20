@@ -4,7 +4,7 @@ description: Musixmatch is an Italian music data company and platform for users 
   search and share song lyrics with translations. Musixmatch has 80 million users,
   8 million songs with their respective lyrics, and 115+ employees.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://developer.musixmatch.com/
 created: '2024-06-07'
 modified: '2026-05-19'
@@ -23,7 +23,7 @@ apis:
   - Snippets
   - Subtitle
   - Track
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api.musixmatch.com/ws/1.1/
   humanURL: https://developer.musixmatch.com/documentation
   properties:
