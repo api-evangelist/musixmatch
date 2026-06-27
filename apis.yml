@@ -31,17 +31,17 @@ apis:
     type: Documentation
   - url: openapi/musixmatch-openapi-original.yml
     type: OpenAPI
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/musixmatch-album.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/musixmatch-artist.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/musixmatch-lyrics.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/musixmatch-snippets.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/musixmatch-subtitle.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/musixmatch-track.yaml
   - url: graphql/musixmatch-graphql.md
     type: GraphQL
