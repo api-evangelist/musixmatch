@@ -49,6 +49,10 @@ apis:
     in your application. Musixmatch lyrics API is a robust service that permits you
     to search and retrieve lyrics in the simplest possible way.
 common:
+- type: DomainSecurity
+  url: security/musixmatch-domain-security.yml
+- type: Authentication
+  url: authentication/musixmatch-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/musixmatch
 - type: LinkedIn
