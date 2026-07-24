@@ -1,0 +1,402 @@
+openapi: 3.0.1
+info:
+  title: Musixmatch Album Artist API
+  description: '
+
+    The most powerful and legal way to display lyrics on your website or in
+
+    your application. Musixmatch lyrics API is a robust service that permits
+
+    you to search and retrieve lyrics in the simplest possible way.'
+  termsOfService: http://musixmatch.com/apiterms/
+  contact:
+    name: Musixmatch
+    url: https://musixmatch.com
+    email: info@musixmatch.com
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+  version: 1.1.0
+servers:
+- url: https://api.musixmatch.com/ws/1.1
+security:
+- key: []
+tags:
+- name: Artist
+  description: ''
+paths:
+  /artist.related.get:
+    get:
+      tags:
+      - Artist
+      parameters:
+      - name: format
+        in: query
+        description: 'output format: json, jsonp, xml.'
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: artist_id
+        in: query
+        description: The musiXmatch artist id
+        required: true
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      responses:
+        '200':
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          available:
+                            type: number
+                            description: ''
+                          status_code:
+                            type: number
+                            description: ''
+                          execute_time:
+                            type: number
+                            description: ''
+                      body:
+                        type: object
+                        properties:
+                          artist_list:
+                            type: array
+                            description: A list of artists
+                            items:
+                              type: object
+                              properties:
+                                artist:
+                                  $ref: '#/components/schemas/Artist'
+      security:
+      - key: []
+  /artist.search:
+    get:
+      tags:
+      - Artist
+      parameters:
+      - name: format
+        in: query
+        description: 'output format: json, jsonp, xml.'
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: q_artist
+        in: query
+        description: The song artist
+        schema:
+          type: string
+      - name: f_artist_id
+        in: query
+        description: When set, filter by this artist id
+        schema:
+          type: number
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      responses:
+        '200':
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          available:
+                            type: number
+                            description: ''
+                          status_code:
+                            type: number
+                            description: ''
+                          execute_time:
+                            type: number
+                            description: ''
+                      body:
+                        type: object
+                        properties:
+                          artist_list:
+                            type: array
+                            description: A list of artists
+                            items:
+                              type: object
+                              properties:
+                                artist:
+                                  $ref: '#/components/schemas/Artist'
+      security:
+      - key: []
+  /artist.get:
+    get:
+      tags:
+      - Artist
+      parameters:
+      - name: format
+        in: query
+        description: 'output format: json, jsonp, xml.'
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: artist_id
+        in: query
+        description: "\tThe musiXmatch artist id"
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ''
+                          execute_time:
+                            type: number
+                            description: ''
+                      body:
+                        type: object
+                        properties:
+                          artist:
+                            $ref: '#/components/schemas/Artist'
+      security:
+      - key: []
+  /chart.artists.get:
+    get:
+      tags:
+      - Artist
+      parameters:
+      - name: format
+        in: query
+        description: 'output format: json, jsonp, xml.'
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Define the page number for paginated results
+        schema:
+          type: number
+      - name: page_size
+        in: query
+        description: Define the page size for paginated results.Range is 1 to 100.
+        schema:
+          type: number
+      - name: country
+        in: query
+        description: A valid ISO 3166 country code
+        schema:
+          type: string
+          default: us
+      responses:
+        '200':
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          available:
+                            type: number
+                          status_code:
+                            type: number
+                            description: ''
+                          execute_time:
+                            type: number
+                            description: ''
+                      body:
+                        type: object
+                        properties:
+                          artist_list:
+                            type: array
+                            description: A list of artists
+                            items:
+                              type: object
+                              properties:
+                                artist:
+                                  $ref: '#/components/schemas/Artist'
+      security:
+      - key: []
+components:
+  schemas:
+    Artist:
+      title: a Artist object
+      type: object
+      properties:
+        artist_credits:
+          type: object
+          properties:
+            artist_list:
+              type: array
+              items:
+                type: string
+                description: ''
+        artist_mbid:
+          type: string
+          description: ''
+        artist_name:
+          type: string
+          description: ''
+        secondary_genres:
+          type: object
+          properties:
+            music_genre_list:
+              type: array
+              items:
+                type: string
+                description: ''
+        artist_alias_list:
+          type: array
+          items:
+            type: object
+            properties:
+              artist_alias:
+                type: string
+                description: ''
+        artist_vanity_id:
+          type: string
+          description: ''
+        restricted:
+          type: number
+          description: ''
+        artist_country:
+          type: string
+          description: ''
+        artist_comment:
+          type: string
+          description: ''
+        artist_name_translation_list:
+          type: array
+          items:
+            type: object
+            properties:
+              artist_name_translation:
+                type: object
+                properties:
+                  language:
+                    type: string
+                    description: ''
+                  translation:
+                    type: string
+                    description: ''
+        artist_edit_url:
+          type: string
+          description: ''
+        artist_share_url:
+          type: string
+          description: ''
+        artist_id:
+          type: number
+          description: ''
+        updated_time:
+          type: string
+          description: ''
+        managed:
+          type: number
+          description: ''
+        primary_genres:
+          type: object
+          properties:
+            music_genre_list:
+              type: array
+              items:
+                type: object
+                properties:
+                  music_genre:
+                    type: object
+                    properties:
+                      music_genre_parent_id:
+                        type: number
+                        description: ''
+                      music_genre_name:
+                        type: string
+                        description: ''
+                      music_genre_vanity:
+                        type: string
+                        description: ''
+                      music_genre_id:
+                        type: number
+                        description: ''
+                      music_genre_name_extended:
+                        type: string
+                        description: ''
+        artist_twitter_url:
+          type: string
+          description: ''
+        artist_rating:
+          type: number
+          description: ''
+      description: a artist in the Musixmatch database.
+  securitySchemes:
+    key:
+      type: apiKey
+      name: apikey
+      in: query
+externalDocs:
+  description: Find out more about Musixmatch API
+  url: https://developer.musixmatch.com/
+x-original-swagger-version: '2.0'

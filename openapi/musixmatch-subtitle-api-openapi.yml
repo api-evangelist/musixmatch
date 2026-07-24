@@ -1,0 +1,198 @@
+openapi: 3.0.1
+info:
+  title: Musixmatch Album Subtitle API
+  description: '
+
+    The most powerful and legal way to display lyrics on your website or in
+
+    your application. Musixmatch lyrics API is a robust service that permits
+
+    you to search and retrieve lyrics in the simplest possible way.'
+  termsOfService: http://musixmatch.com/apiterms/
+  contact:
+    name: Musixmatch
+    url: https://musixmatch.com
+    email: info@musixmatch.com
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+  version: 1.1.0
+servers:
+- url: https://api.musixmatch.com/ws/1.1
+security:
+- key: []
+tags:
+- name: Subtitle
+  description: ''
+paths:
+  /matcher.subtitle.get:
+    get:
+      tags:
+      - Subtitle
+      parameters:
+      - name: format
+        in: query
+        description: 'output format: json, jsonp, xml.'
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: q_track
+        in: query
+        description: The song title
+        schema:
+          type: string
+      - name: q_artist
+        in: query
+        description: "\tThe song artist"
+        schema:
+          type: string
+      - name: f_subtitle_length
+        in: query
+        description: Filter by subtitle length in seconds
+        schema:
+          type: number
+      - name: f_subtitle_length_max_deviation
+        in: query
+        description: Max deviation for a subtitle length in seconds
+        schema:
+          type: number
+      responses:
+        '200':
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ''
+                          execute_time:
+                            type: number
+                            description: ''
+                      body:
+                        type: object
+                        properties:
+                          subtitle:
+                            $ref: '#/components/schemas/Subtitle'
+      security:
+      - key: []
+  /track.subtitle.get:
+    get:
+      tags:
+      - Subtitle
+      parameters:
+      - name: format
+        in: query
+        description: 'output format: json, jsonp, xml.'
+        schema:
+          type: string
+          default: json
+      - name: callback
+        in: query
+        description: jsonp callback
+        schema:
+          type: string
+      - name: track_id
+        in: query
+        description: The musiXmatch track id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The request was successful.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: object
+                    properties:
+                      header:
+                        type: object
+                        properties:
+                          status_code:
+                            type: number
+                            description: ''
+                          execute_time:
+                            type: number
+                            description: ''
+                      body:
+                        type: object
+                        properties:
+                          subtitle:
+                            $ref: '#/components/schemas/Subtitle'
+      security:
+      - key: []
+components:
+  schemas:
+    Subtitle:
+      title: a Subtitle object
+      type: object
+      properties:
+        subtitle_body:
+          type: string
+          description: ''
+        publisher_list:
+          type: array
+          items:
+            type: string
+            description: ''
+        subtitle_language:
+          type: string
+          description: ''
+        subtitle_language_description:
+          type: string
+          description: ''
+        subtitle_id:
+          type: number
+          description: ''
+        pixel_tracking_url:
+          type: string
+          description: ''
+        html_tracking_url:
+          type: string
+          description: ''
+        restricted:
+          type: number
+          description: ''
+        lyrics_copyright:
+          type: string
+          description: ''
+        script_tracking_url:
+          type: string
+          description: ''
+        subtitle_length:
+          type: number
+          description: ''
+        updated_time:
+          type: string
+          description: ''
+        writer_list:
+          type: array
+          items:
+            type: string
+            description: ''
+      description: a synchronized lyrics subtitle in the Musixmatch database.
+  securitySchemes:
+    key:
+      type: apiKey
+      name: apikey
+      in: query
+externalDocs:
+  description: Find out more about Musixmatch API
+  url: https://developer.musixmatch.com/
+x-original-swagger-version: '2.0'
