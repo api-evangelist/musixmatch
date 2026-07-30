@@ -4,7 +4,20 @@ description: Musixmatch is an Italian music data company and platform for users 
   search and share song lyrics with translations. Musixmatch has 80 million users,
   8 million songs with their respective lyrics, and 115+ employees.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/musixmatch.png
 url: https://developer.musixmatch.com/
 created: '2024-06-07'
 modified: '2026-05-19'
@@ -14,23 +27,18 @@ tags:
 - Music
 - Translations
 apis:
-- aid: musixmatch:musixmatch-api
-  name: Musixmatch API
+- aid: musixmatch:musixmatch-album-api
+  name: Musixmatch Album API
+  description: The Album API from Musixmatch — 2 operation(s) for album.
+  humanURL: https://developer.musixmatch.com/documentation
+  baseURL: https://api.musixmatch.com/ws/1.1/
   tags:
   - Album
-  - Artist
-  - Lyrics
-  - Snippets
-  - Subtitle
-  - Track
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  baseURL: https://api.musixmatch.com/ws/1.1/
-  humanURL: https://developer.musixmatch.com/documentation
   properties:
-  - url: https://developer.musixmatch.com/documentation
-    type: Documentation
-  - url: openapi/musixmatch-openapi-original.yml
-    type: OpenAPI
+  - type: OpenAPI
+    url: openapi/musixmatch-album-api-openapi.yml
+  - type: Documentation
+    url: https://developer.musixmatch.com/documentation
   - type: X-NaftikoCapability
     url: capabilities/musixmatch-album.yaml
   - type: X-NaftikoCapability
@@ -43,11 +51,138 @@ apis:
     url: capabilities/musixmatch-subtitle.yaml
   - type: X-NaftikoCapability
     url: capabilities/musixmatch-track.yaml
-  - url: graphql/musixmatch-graphql.md
-    type: GraphQL
-  description: The most powerful and legal way to display lyrics on your website or
-    in your application. Musixmatch lyrics API is a robust service that permits you
-    to search and retrieve lyrics in the simplest possible way.
+  - type: GraphQL
+    url: graphql/musixmatch-graphql.md
+- aid: musixmatch:musixmatch-artist-api
+  name: Musixmatch Artist API
+  description: The Artist API from Musixmatch — 4 operation(s) for artist.
+  humanURL: https://developer.musixmatch.com/documentation
+  baseURL: https://api.musixmatch.com/ws/1.1/
+  tags:
+  - Artist
+  properties:
+  - type: OpenAPI
+    url: openapi/musixmatch-artist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.musixmatch.com/documentation
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-album.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-artist.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-lyrics.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-snippets.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-subtitle.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-track.yaml
+  - type: GraphQL
+    url: graphql/musixmatch-graphql.md
+- aid: musixmatch:musixmatch-lyrics-api
+  name: Musixmatch Lyrics API
+  description: The Lyrics API from Musixmatch — 2 operation(s) for lyrics.
+  humanURL: https://developer.musixmatch.com/documentation
+  baseURL: https://api.musixmatch.com/ws/1.1/
+  tags:
+  - Lyrics
+  properties:
+  - type: OpenAPI
+    url: openapi/musixmatch-lyrics-api-openapi.yml
+  - type: Documentation
+    url: https://developer.musixmatch.com/documentation
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-album.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-artist.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-lyrics.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-snippets.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-subtitle.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-track.yaml
+  - type: GraphQL
+    url: graphql/musixmatch-graphql.md
+- aid: musixmatch:musixmatch-snippets-api
+  name: Musixmatch Snippets API
+  description: The Snippets API from Musixmatch — 1 operation(s) for snippets.
+  humanURL: https://developer.musixmatch.com/documentation
+  baseURL: https://api.musixmatch.com/ws/1.1/
+  tags:
+  - Snippets
+  properties:
+  - type: OpenAPI
+    url: openapi/musixmatch-snippets-api-openapi.yml
+  - type: Documentation
+    url: https://developer.musixmatch.com/documentation
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-album.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-artist.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-lyrics.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-snippets.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-subtitle.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-track.yaml
+  - type: GraphQL
+    url: graphql/musixmatch-graphql.md
+- aid: musixmatch:musixmatch-subtitle-api
+  name: Musixmatch Subtitle API
+  description: The Subtitle API from Musixmatch — 2 operation(s) for subtitle.
+  humanURL: https://developer.musixmatch.com/documentation
+  baseURL: https://api.musixmatch.com/ws/1.1/
+  tags:
+  - Subtitle
+  properties:
+  - type: OpenAPI
+    url: openapi/musixmatch-subtitle-api-openapi.yml
+  - type: Documentation
+    url: https://developer.musixmatch.com/documentation
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-album.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-artist.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-lyrics.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-snippets.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-subtitle.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-track.yaml
+  - type: GraphQL
+    url: graphql/musixmatch-graphql.md
+- aid: musixmatch:musixmatch-track-api
+  name: Musixmatch Track API
+  description: The Track API from Musixmatch — 5 operation(s) for track.
+  humanURL: https://developer.musixmatch.com/documentation
+  baseURL: https://api.musixmatch.com/ws/1.1/
+  tags:
+  - Track
+  properties:
+  - type: OpenAPI
+    url: openapi/musixmatch-track-api-openapi.yml
+  - type: Documentation
+    url: https://developer.musixmatch.com/documentation
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-album.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-artist.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-lyrics.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-snippets.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-subtitle.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/musixmatch-track.yaml
+  - type: GraphQL
+    url: graphql/musixmatch-graphql.md
 common:
 - type: AgenticAccess
   url: agentic-access/musixmatch-agentic-access.yml
