@@ -1,0 +1,24 @@
+{
+  "provider": "musixmatch",
+  "sources": [
+    "musixmatch-album-api-openapi.yml",
+    "musixmatch-artist-api-openapi.yml",
+    "musixmatch-lyrics-api-openapi.yml",
+    "musixmatch-snippets-api-openapi.yml",
+    "musixmatch-subtitle-api-openapi.yml",
+    "musixmatch-track-api-openapi.yml"
+  ],
+  "outputs": [
+    "musixmatch-album-api-openapi.yml",
+    "musixmatch-artist-api-openapi.yml",
+    "musixmatch-lyrics-api-openapi.yml",
+    "musixmatch-snippets-api-openapi.yml",
+    "musixmatch-subtitle-api-openapi.yml",
+    "musixmatch-track-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
