@@ -39,18 +39,6 @@ apis:
     url: openapi/musixmatch-album-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-album.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-artist.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-lyrics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-snippets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-subtitle.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-track.yaml
   - type: GraphQL
     url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-artist-api
@@ -65,18 +53,6 @@ apis:
     url: openapi/musixmatch-artist-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-album.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-artist.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-lyrics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-snippets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-subtitle.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-track.yaml
   - type: GraphQL
     url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-lyrics-api
@@ -91,18 +67,6 @@ apis:
     url: openapi/musixmatch-lyrics-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-album.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-artist.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-lyrics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-snippets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-subtitle.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-track.yaml
   - type: GraphQL
     url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-snippets-api
@@ -117,18 +81,6 @@ apis:
     url: openapi/musixmatch-snippets-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-album.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-artist.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-lyrics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-snippets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-subtitle.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-track.yaml
   - type: GraphQL
     url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-subtitle-api
@@ -143,18 +95,6 @@ apis:
     url: openapi/musixmatch-subtitle-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-album.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-artist.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-lyrics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-snippets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-subtitle.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-track.yaml
   - type: GraphQL
     url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-track-api
@@ -169,18 +109,6 @@ apis:
     url: openapi/musixmatch-track-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-album.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-artist.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-lyrics.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-snippets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-subtitle.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/musixmatch-track.yaml
   - type: GraphQL
     url: graphql/musixmatch-graphql.md
 common:
