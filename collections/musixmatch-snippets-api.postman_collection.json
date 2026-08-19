@@ -1,0 +1,168 @@
+{
+  "item": [
+    {
+      "id": "7f2789dc-05dd-42f2-8be5-72dd4ed6e337",
+      "name": "Snippets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d8e47c7-eb7e-4c8c-b9b8-a71605278328",
+          "name": "/track.snippet.get",
+          "request": {
+            "name": "/track.snippet.get",
+            "description": {},
+            "url": {
+              "path": [
+                "track.snippet.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "track_id",
+                  "value": "<string>",
+                  "description": "(Required) The musiXmatch track id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "60038ffa-3b19-4c8d-8511-78b83015b13b",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "track.snippet.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "track_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 6365.490201502032,\n      \"execute_time\": 3662.570109348041\n    },\n    \"body\": {\n      \"snippet\": {\n        \"html_tracking_url\": \"string\",\n        \"instrumental\": 4551.545116841811,\n        \"restricted\": 5037.6941256626,\n        \"updated_time\": \"string\",\n        \"snippet_body\": \"string\",\n        \"pixel_tracking_url\": \"string\",\n        \"snippet_id\": 532.5955079018019,\n        \"script_tracking_url\": \"string\",\n        \"snippet_language\": \"string\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.musixmatch.com/ws/1.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cd22b39a-e396-4656-ab9a-8d46ca4895d0",
+    "name": "Musixmatch Album Snippets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe most powerful and legal way to display lyrics on your website or in\nyour application. Musixmatch lyrics API is a robust service that permits\nyou to search and retrieve lyrics in the simplest possible way.\n\nContact Support:\n Name: Musixmatch\n Email: info@musixmatch.com",
+      "type": "text/plain"
+    }
+  }
+}

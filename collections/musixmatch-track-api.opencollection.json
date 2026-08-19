@@ -1,0 +1,326 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Musixmatch Album Track API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Track",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /album.tracks.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/album.tracks.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "album_id",
+                "value": "",
+                "type": "query",
+                "description": "The musiXmatch album id"
+              },
+              {
+                "name": "f_has_lyrics",
+                "value": "",
+                "type": "query",
+                "description": "When set, filter only contents with lyrics"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Define the page number for paginated results"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Define the page size for paginated results.Range is 1 to 100."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /matcher.track.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/matcher.track.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "q_artist",
+                "value": "",
+                "type": "query",
+                "description": "The song artist"
+              },
+              {
+                "name": "q_track",
+                "value": "",
+                "type": "query",
+                "description": "The song title"
+              },
+              {
+                "name": "f_has_lyrics",
+                "value": "",
+                "type": "query",
+                "description": "When set, filter only contents with lyrics"
+              },
+              {
+                "name": "f_has_subtitle",
+                "value": "",
+                "type": "query",
+                "description": "When set, filter only contents with subtitles"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /track.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/track.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "track_id",
+                "value": "",
+                "type": "query",
+                "description": "The musiXmatch track id"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /track.search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/track.search",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "q_track",
+                "value": "",
+                "type": "query",
+                "description": "The song title"
+              },
+              {
+                "name": "q_artist",
+                "value": "",
+                "type": "query",
+                "description": "The song artist"
+              },
+              {
+                "name": "q_lyrics",
+                "value": "",
+                "type": "query",
+                "description": "Any word in the lyrics"
+              },
+              {
+                "name": "f_artist_id",
+                "value": "",
+                "type": "query",
+                "description": "When set, filter by this artist id"
+              },
+              {
+                "name": "f_music_genre_id",
+                "value": "",
+                "type": "query",
+                "description": "When set, filter by this music category id"
+              },
+              {
+                "name": "f_lyrics_language",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the lyrics language (en,it,..)"
+              },
+              {
+                "name": "f_has_lyrics",
+                "value": "",
+                "type": "query",
+                "description": "When set, filter only contents with lyrics"
+              },
+              {
+                "name": "s_artist_rating",
+                "value": "",
+                "type": "query",
+                "description": "Sort by our popularity index for artists (asc|desc)"
+              },
+              {
+                "name": "s_track_rating",
+                "value": "",
+                "type": "query",
+                "description": "Sort by our popularity index for tracks (asc|desc)"
+              },
+              {
+                "name": "quorum_factor",
+                "value": "",
+                "type": "query",
+                "description": "Search only a part of the given query string.Allowed range is (0.1  0.9)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Define the page size for paginated results.Range is 1 to 100."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Define the page number for paginated results"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /chart.tracks.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/chart.tracks.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Define the page number for paginated results"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Define the page size for paginated results.Range is 1 to 100."
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "A valid ISO 3166 country code"
+              },
+              {
+                "name": "f_has_lyrics",
+                "value": "",
+                "type": "query",
+                "description": "When set, filter only contents with lyrics"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

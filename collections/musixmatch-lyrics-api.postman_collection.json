@@ -1,0 +1,297 @@
+{
+  "item": [
+    {
+      "id": "d9c90f96-3b62-4c38-841d-2057ceaef152",
+      "name": "Lyrics",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "067e7bc3-b654-4dae-8555-1a8586088b4a",
+          "name": "/matcher.lyrics.get",
+          "request": {
+            "name": "/matcher.lyrics.get",
+            "description": {},
+            "url": {
+              "path": [
+                "matcher.lyrics.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_track",
+                  "value": "<string>",
+                  "description": "The song title"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_artist",
+                  "value": "<string>",
+                  "description": "The song artist"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "16fc7d96-823b-4cd6-86f7-bc6d9b8c2158",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "matcher.lyrics.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_track",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_artist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 3503.0610257996664,\n      \"execute_time\": 1817.148633607696\n    },\n    \"body\": {\n      \"lyrics\": {\n        \"instrumental\": 3045.7210152116963,\n        \"pixel_tracking_url\": \"string\",\n        \"publisher_list\": [\n          \"string\",\n          \"string\"\n        ],\n        \"lyrics_language_description\": \"string\",\n        \"restricted\": 351.49176909705426,\n        \"updated_time\": \"string\",\n        \"explicit\": 1432.1281873816217,\n        \"lyrics_copyright\": \"string\",\n        \"html_tracking_url\": \"string\",\n        \"lyrics_language\": \"string\",\n        \"script_tracking_url\": \"string\",\n        \"verified\": 9377.237613203411,\n        \"lyrics_body\": \"string\",\n        \"lyrics_id\": 5275.7680139749455,\n        \"writer_list\": [\n          \"string\",\n          \"string\"\n        ],\n        \"can_edit\": 2115.927844090948,\n        \"action_requested\": \"string\",\n        \"locked\": 8519.605517092014\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "407fb61f-2229-4c37-abdb-1988541ebe1f",
+          "name": "/track.lyrics.get",
+          "request": {
+            "name": "/track.lyrics.get",
+            "description": {},
+            "url": {
+              "path": [
+                "track.lyrics.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "track_id",
+                  "value": "<string>",
+                  "description": "(Required) The musiXmatch track id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "58bae282-1308-4e6d-900f-be57f6bdd7bf",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "track.lyrics.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "track_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 1850.6252405743028,\n      \"execute_time\": 7520.520517983433\n    },\n    \"body\": {\n      \"lyrics\": {\n        \"instrumental\": 154.4374628035794,\n        \"pixel_tracking_url\": \"string\",\n        \"publisher_list\": [\n          \"string\",\n          \"string\"\n        ],\n        \"lyrics_language_description\": \"string\",\n        \"restricted\": 9226.782066937216,\n        \"updated_time\": \"string\",\n        \"explicit\": 24.51553646293125,\n        \"lyrics_copyright\": \"string\",\n        \"html_tracking_url\": \"string\",\n        \"lyrics_language\": \"string\",\n        \"script_tracking_url\": \"string\",\n        \"verified\": 1277.4226390418064,\n        \"lyrics_body\": \"string\",\n        \"lyrics_id\": 2988.6101513969097,\n        \"writer_list\": [\n          \"string\",\n          \"string\"\n        ],\n        \"can_edit\": 2584.831959566504,\n        \"action_requested\": \"string\",\n        \"locked\": 2484.6117185975113\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.musixmatch.com/ws/1.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "427dd60a-f8e3-4aad-8357-4f5f3f62abc9",
+    "name": "Musixmatch Album Lyrics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe most powerful and legal way to display lyrics on your website or in\nyour application. Musixmatch lyrics API is a robust service that permits\nyou to search and retrieve lyrics in the simplest possible way.\n\nContact Support:\n Name: Musixmatch\n Email: info@musixmatch.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,595 @@
+{
+  "item": [
+    {
+      "id": "ed4e14c2-2787-4be7-b1fb-840c8812eb9d",
+      "name": "Artist",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dffa0500-2fa7-4d17-a34e-4ae3d5086949",
+          "name": "/artist.related.get",
+          "request": {
+            "name": "/artist.related.get",
+            "description": {},
+            "url": {
+              "path": [
+                "artist.related.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "artist_id",
+                  "value": "<string>",
+                  "description": "(Required) The musiXmatch artist id"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<number>",
+                  "description": "Define the page size for paginated results.Range is 1 to 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>",
+                  "description": "Define the page number for paginated results"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "527c4b61-cbba-4358-b567-6c281953bbd4",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "artist.related.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "artist_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"available\": 778.9073486524389,\n      \"status_code\": 3257.782588873681,\n      \"execute_time\": 6412.61658471157\n    },\n    \"body\": {\n      \"artist_list\": [\n        {\n          \"artist\": {\n            \"artist_credits\": {\n              \"artist_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_mbid\": \"string\",\n            \"artist_name\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_alias_list\": [\n              {\n                \"artist_alias\": \"string\"\n              },\n              {\n                \"artist_alias\": \"string\"\n              }\n            ],\n            \"artist_vanity_id\": \"string\",\n            \"restricted\": 4778.723026095055,\n            \"artist_country\": \"string\",\n            \"artist_comment\": \"string\",\n            \"artist_name_translation_list\": [\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ],\n            \"artist_edit_url\": \"string\",\n            \"artist_share_url\": \"string\",\n            \"artist_id\": 9717.395186707032,\n            \"updated_time\": \"string\",\n            \"managed\": 3641.5493336833692,\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"artist_twitter_url\": \"string\",\n            \"artist_rating\": 7113.14853880853\n          }\n        },\n        {\n          \"artist\": {\n            \"artist_credits\": {\n              \"artist_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_mbid\": \"string\",\n            \"artist_name\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_alias_list\": [\n              {\n                \"artist_alias\": \"string\"\n              },\n              {\n                \"artist_alias\": \"string\"\n              }\n            ],\n            \"artist_vanity_id\": \"string\",\n            \"restricted\": 2281.166422073737,\n            \"artist_country\": \"string\",\n            \"artist_comment\": \"string\",\n            \"artist_name_translation_list\": [\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ],\n            \"artist_edit_url\": \"string\",\n            \"artist_share_url\": \"string\",\n            \"artist_id\": 9838.226977055681,\n            \"updated_time\": \"string\",\n            \"managed\": 2321.4767791187405,\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"artist_twitter_url\": \"string\",\n            \"artist_rating\": 7702.400165480765\n          }\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3110519b-f3f5-44ee-8701-bd2dfb74e8e6",
+          "name": "/artist.search",
+          "request": {
+            "name": "/artist.search",
+            "description": {},
+            "url": {
+              "path": [
+                "artist.search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_artist",
+                  "value": "<string>",
+                  "description": "The song artist"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_artist_id",
+                  "value": "<number>",
+                  "description": "When set, filter by this artist id"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>",
+                  "description": "Define the page number for paginated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<number>",
+                  "description": "Define the page size for paginated results.Range is 1 to 100."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b701eaed-c188-438d-b77e-76fc1a73a749",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "artist.search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_artist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "f_artist_id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"available\": 9741.45116910503,\n      \"status_code\": 9623.847824605058,\n      \"execute_time\": 3444.2072358323717\n    },\n    \"body\": {\n      \"artist_list\": [\n        {\n          \"artist\": {\n            \"artist_credits\": {\n              \"artist_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_mbid\": \"string\",\n            \"artist_name\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_alias_list\": [\n              {\n                \"artist_alias\": \"string\"\n              },\n              {\n                \"artist_alias\": \"string\"\n              }\n            ],\n            \"artist_vanity_id\": \"string\",\n            \"restricted\": 7164.917257724993,\n            \"artist_country\": \"string\",\n            \"artist_comment\": \"string\",\n            \"artist_name_translation_list\": [\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ],\n            \"artist_edit_url\": \"string\",\n            \"artist_share_url\": \"string\",\n            \"artist_id\": 5724.753702126933,\n            \"updated_time\": \"string\",\n            \"managed\": 5050.280369953958,\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"artist_twitter_url\": \"string\",\n            \"artist_rating\": 4428.108753869498\n          }\n        },\n        {\n          \"artist\": {\n            \"artist_credits\": {\n              \"artist_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_mbid\": \"string\",\n            \"artist_name\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_alias_list\": [\n              {\n                \"artist_alias\": \"string\"\n              },\n              {\n                \"artist_alias\": \"string\"\n              }\n            ],\n            \"artist_vanity_id\": \"string\",\n            \"restricted\": 219.33549313553956,\n            \"artist_country\": \"string\",\n            \"artist_comment\": \"string\",\n            \"artist_name_translation_list\": [\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ],\n            \"artist_edit_url\": \"string\",\n            \"artist_share_url\": \"string\",\n            \"artist_id\": 2272.798883757895,\n            \"updated_time\": \"string\",\n            \"managed\": 3574.352631954866,\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"artist_twitter_url\": \"string\",\n            \"artist_rating\": 1261.5453930415788\n          }\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79e4a683-4755-42ed-acbc-5f0a3df83616",
+          "name": "/artist.get",
+          "request": {
+            "name": "/artist.get",
+            "description": {},
+            "url": {
+              "path": [
+                "artist.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "artist_id",
+                  "value": "<string>",
+                  "description": "(Required) \tThe musiXmatch artist id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0e82a7e0-845f-409a-9e6d-9824b5ecb881",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "artist.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "artist_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 4159.332914561632,\n      \"execute_time\": 6775.10362608916\n    },\n    \"body\": {\n      \"artist\": {\n        \"artist_credits\": {\n          \"artist_list\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"artist_mbid\": \"string\",\n        \"artist_name\": \"string\",\n        \"secondary_genres\": {\n          \"music_genre_list\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"artist_alias_list\": [\n          {\n            \"artist_alias\": \"string\"\n          },\n          {\n            \"artist_alias\": \"string\"\n          }\n        ],\n        \"artist_vanity_id\": \"string\",\n        \"restricted\": 8735.76409252753,\n        \"artist_country\": \"string\",\n        \"artist_comment\": \"string\",\n        \"artist_name_translation_list\": [\n          {\n            \"artist_name_translation\": {\n              \"language\": \"string\",\n              \"translation\": \"string\"\n            }\n          },\n          {\n            \"artist_name_translation\": {\n              \"language\": \"string\",\n              \"translation\": \"string\"\n            }\n          }\n        ],\n        \"artist_edit_url\": \"string\",\n        \"artist_share_url\": \"string\",\n        \"artist_id\": 6522.055974629023,\n        \"updated_time\": \"string\",\n        \"managed\": 4273.560435531519,\n        \"primary_genres\": {\n          \"music_genre_list\": [\n            {\n              \"music_genre\": {\n                \"music_genre_parent_id\": 301.4833336807388,\n                \"music_genre_name\": \"string\",\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_id\": 3512.320052383796,\n                \"music_genre_name_extended\": \"string\"\n              }\n            },\n            {\n              \"music_genre\": {\n                \"music_genre_parent_id\": 3063.1698842326305,\n                \"music_genre_name\": \"string\",\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_id\": 3666.6199588659997,\n                \"music_genre_name_extended\": \"string\"\n              }\n            }\n          ]\n        },\n        \"artist_twitter_url\": \"string\",\n        \"artist_rating\": 1216.3778853098572\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36d84a6d-8ccf-4231-b4d1-1a5343d42da6",
+          "name": "/chart.artists.get",
+          "request": {
+            "name": "/chart.artists.get",
+            "description": {},
+            "url": {
+              "path": [
+                "chart.artists.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>",
+                  "description": "Define the page number for paginated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<number>",
+                  "description": "Define the page size for paginated results.Range is 1 to 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "us",
+                  "description": "A valid ISO 3166 country code"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b4ab658a-f704-41d7-a2cd-c1ad8f2a4450",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chart.artists.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "us"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"available\": 2838.4728436283444,\n      \"status_code\": 4353.036460263802,\n      \"execute_time\": 5568.988200162495\n    },\n    \"body\": {\n      \"artist_list\": [\n        {\n          \"artist\": {\n            \"artist_credits\": {\n              \"artist_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_mbid\": \"string\",\n            \"artist_name\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_alias_list\": [\n              {\n                \"artist_alias\": \"string\"\n              },\n              {\n                \"artist_alias\": \"string\"\n              }\n            ],\n            \"artist_vanity_id\": \"string\",\n            \"restricted\": 9975.633259785394,\n            \"artist_country\": \"string\",\n            \"artist_comment\": \"string\",\n            \"artist_name_translation_list\": [\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ],\n            \"artist_edit_url\": \"string\",\n            \"artist_share_url\": \"string\",\n            \"artist_id\": 6501.983074930001,\n            \"updated_time\": \"string\",\n            \"managed\": 8018.287512485623,\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"artist_twitter_url\": \"string\",\n            \"artist_rating\": 8598.855555520042\n          }\n        },\n        {\n          \"artist\": {\n            \"artist_credits\": {\n              \"artist_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_mbid\": \"string\",\n            \"artist_name\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"artist_alias_list\": [\n              {\n                \"artist_alias\": \"string\"\n              },\n              {\n                \"artist_alias\": \"string\"\n              }\n            ],\n            \"artist_vanity_id\": \"string\",\n            \"restricted\": 3481.4401926167925,\n            \"artist_country\": \"string\",\n            \"artist_comment\": \"string\",\n            \"artist_name_translation_list\": [\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"artist_name_translation\": {\n                  \"language\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"translation\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ],\n            \"artist_edit_url\": \"string\",\n            \"artist_share_url\": \"string\",\n            \"artist_id\": 4831.394814397978,\n            \"updated_time\": \"string\",\n            \"managed\": 4375.924942419835,\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"artist_twitter_url\": \"string\",\n            \"artist_rating\": 5644.610785899942\n          }\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.musixmatch.com/ws/1.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8d09c6ed-b215-412d-be88-062f0ff5e2b6",
+    "name": "Musixmatch Album Artist API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe most powerful and legal way to display lyrics on your website or in\nyour application. Musixmatch lyrics API is a robust service that permits\nyou to search and retrieve lyrics in the simplest possible way.\n\nContact Support:\n Name: Musixmatch\n Email: info@musixmatch.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "item": [
+    {
+      "id": "21192852-203a-46e9-a983-92fe8ed736f3",
+      "name": "Album",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "426e6f78-07b1-4628-a48a-48558a1d65ec",
+          "name": "/album.get",
+          "request": {
+            "name": "/album.get",
+            "description": {},
+            "url": {
+              "path": [
+                "album.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "album_id",
+                  "value": "<string>",
+                  "description": "(Required) The musiXmatch album id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5093ccfa-73dc-4fc4-8758-0f31cfe33862",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "album.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "album_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 9376.444721989366,\n      \"execute_time\": 3681.591393285556\n    },\n    \"body\": {\n      \"album\": {\n        \"album_coverart_500x500\": \"string\",\n        \"restricted\": 5797.208960037883,\n        \"artist_id\": 4644.057889736763,\n        \"album_name\": \"string\",\n        \"album_coverart_800x800\": \"string\",\n        \"album_copyright\": \"string\",\n        \"album_coverart_350x350\": \"string\",\n        \"artist_name\": \"string\",\n        \"primary_genres\": {\n          \"music_genre_list\": [\n            {\n              \"music_genre\": {\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_parent_id\": 2630.0433112846754,\n                \"music_genre_id\": 2066.536473910148,\n                \"music_genre_name\": \"string\"\n              }\n            },\n            {\n              \"music_genre\": {\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_parent_id\": 8731.763434491117,\n                \"music_genre_id\": 6108.101061043965,\n                \"music_genre_name\": \"string\"\n              }\n            }\n          ]\n        },\n        \"album_id\": 8930.112318270263,\n        \"album_rating\": 9668.887106573542,\n        \"album_pline\": \"string\",\n        \"album_track_count\": 2652.809964669799,\n        \"album_release_type\": \"string\",\n        \"album_release_date\": \"string\",\n        \"album_edit_url\": \"string\",\n        \"updated_time\": \"string\",\n        \"secondary_genres\": {\n          \"music_genre_list\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"album_mbid\": \"string\",\n        \"album_vanity_id\": \"string\",\n        \"album_coverart_100x100\": \"string\",\n        \"album_label\": \"string\"\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ead10d2-79b5-4cfd-9b65-ad76db49bbb3",
+          "name": "/artist.albums.get",
+          "request": {
+            "name": "/artist.albums.get",
+            "description": {},
+            "url": {
+              "path": [
+                "artist.albums.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "artist_id",
+                  "value": "<string>",
+                  "description": "(Required) The musiXmatch artist id"
+                },
+                {
+                  "disabled": false,
+                  "key": "s_release_date",
+                  "value": "<string>",
+                  "description": "Sort by release date (asc|desc)"
+                },
+                {
+                  "disabled": false,
+                  "key": "g_album_name",
+                  "value": "<string>",
+                  "description": "Group by Album Name"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<number>",
+                  "description": "Define the page size for paginated results.Range is 1 to 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>",
+                  "description": "Define the page number for paginated results"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "631ba677-c12b-4d02-be65-791304e290d9",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "artist.albums.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "artist_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "s_release_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "g_album_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"available\": 5117.427883016844,\n      \"status_code\": 9824.037564805296,\n      \"execute_time\": 1705.3942285435853\n    },\n    \"body\": {\n      \"album_list\": [\n        {\n          \"album\": {\n            \"album_coverart_500x500\": \"string\",\n            \"restricted\": 3193.4856824779954,\n            \"artist_id\": 772.8217692587136,\n            \"album_name\": \"string\",\n            \"album_coverart_800x800\": \"string\",\n            \"album_copyright\": \"string\",\n            \"album_coverart_350x350\": \"string\",\n            \"artist_name\": \"string\",\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"album_id\": 8165.906628767077,\n            \"album_rating\": 3538.3369043458456,\n            \"album_pline\": \"string\",\n            \"album_track_count\": 9661.018780913637,\n            \"album_release_type\": \"string\",\n            \"album_release_date\": \"string\",\n            \"album_edit_url\": \"string\",\n            \"updated_time\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"album_mbid\": \"string\",\n            \"album_vanity_id\": \"string\",\n            \"album_coverart_100x100\": \"string\",\n            \"album_label\": \"string\"\n          }\n        },\n        {\n          \"album\": {\n            \"album_coverart_500x500\": \"string\",\n            \"restricted\": 1882.9932826038375,\n            \"artist_id\": 3175.0549578011824,\n            \"album_name\": \"string\",\n            \"album_coverart_800x800\": \"string\",\n            \"album_copyright\": \"string\",\n            \"album_coverart_350x350\": \"string\",\n            \"artist_name\": \"string\",\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"album_id\": 4546.562231477378,\n            \"album_rating\": 4257.761550106691,\n            \"album_pline\": \"string\",\n            \"album_track_count\": 4213.189620688693,\n            \"album_release_type\": \"string\",\n            \"album_release_date\": \"string\",\n            \"album_edit_url\": \"string\",\n            \"updated_time\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            \"album_mbid\": \"string\",\n            \"album_vanity_id\": \"string\",\n            \"album_coverart_100x100\": \"string\",\n            \"album_label\": \"string\"\n          }\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.musixmatch.com/ws/1.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0211f6e4-d4f4-419f-ba86-97b239857637",
+    "name": "Musixmatch Album API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe most powerful and legal way to display lyrics on your website or in\nyour application. Musixmatch lyrics API is a robust service that permits\nyou to search and retrieve lyrics in the simplest possible way.\n\nContact Support:\n Name: Musixmatch\n Email: info@musixmatch.com",
+      "type": "text/plain"
+    }
+  }
+}

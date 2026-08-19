@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Musixmatch Album Lyrics API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lyrics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /matcher.lyrics.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/matcher.lyrics.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "q_track",
+                "value": "",
+                "type": "query",
+                "description": "The song title"
+              },
+              {
+                "name": "q_artist",
+                "value": "",
+                "type": "query",
+                "description": "The song artist"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /track.lyrics.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/track.lyrics.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "track_id",
+                "value": "",
+                "type": "query",
+                "description": "The musiXmatch track id"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

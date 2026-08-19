@@ -1,0 +1,212 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Musixmatch Album Artist API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Artist",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /artist.related.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/artist.related.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "artist_id",
+                "value": "",
+                "type": "query",
+                "description": "The musiXmatch artist id"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Define the page size for paginated results.Range is 1 to 100."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Define the page number for paginated results"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /artist.search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/artist.search",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "q_artist",
+                "value": "",
+                "type": "query",
+                "description": "The song artist"
+              },
+              {
+                "name": "f_artist_id",
+                "value": "",
+                "type": "query",
+                "description": "When set, filter by this artist id"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Define the page number for paginated results"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Define the page size for paginated results.Range is 1 to 100."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /artist.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/artist.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "artist_id",
+                "value": "",
+                "type": "query",
+                "description": "\tThe musiXmatch artist id"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /chart.artists.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/chart.artists.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Define the page number for paginated results"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Define the page size for paginated results.Range is 1 to 100."
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "A valid ISO 3166 country code"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

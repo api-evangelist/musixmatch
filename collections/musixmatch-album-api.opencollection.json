@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Musixmatch Album API",
+    "version": "1.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Album",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /album.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/album.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "album_id",
+                "value": "",
+                "type": "query",
+                "description": "The musiXmatch album id"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /artist.albums.get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.musixmatch.com/ws/1.1/artist.albums.get",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "output format: json, jsonp, xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "jsonp callback"
+              },
+              {
+                "name": "artist_id",
+                "value": "",
+                "type": "query",
+                "description": "The musiXmatch artist id"
+              },
+              {
+                "name": "s_release_date",
+                "value": "",
+                "type": "query",
+                "description": "Sort by release date (asc|desc)"
+              },
+              {
+                "name": "g_album_name",
+                "value": "",
+                "type": "query",
+                "description": "Group by Album Name"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Define the page size for paginated results.Range is 1 to 100."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Define the page number for paginated results"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "apikey",
+              "value": "{{apikey}}",
+              "placement": "query"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

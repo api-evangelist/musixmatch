@@ -1,0 +1,317 @@
+{
+  "item": [
+    {
+      "id": "59e47d08-984f-4209-97c5-8f5d3ecc6597",
+      "name": "Subtitle",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2f282315-3498-4e56-b0c5-4525f8635e12",
+          "name": "/matcher.subtitle.get",
+          "request": {
+            "name": "/matcher.subtitle.get",
+            "description": {},
+            "url": {
+              "path": [
+                "matcher.subtitle.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_track",
+                  "value": "<string>",
+                  "description": "The song title"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_artist",
+                  "value": "<string>",
+                  "description": "\tThe song artist"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_subtitle_length",
+                  "value": "<number>",
+                  "description": "Filter by subtitle length in seconds"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_subtitle_length_max_deviation",
+                  "value": "<number>",
+                  "description": "Max deviation for a subtitle length in seconds"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5191bac3-40e9-46af-9852-208ad5b66ad9",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "matcher.subtitle.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_track",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_artist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "f_subtitle_length",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "f_subtitle_length_max_deviation",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 2250.8100205716073,\n      \"execute_time\": 24.1761765241022\n    },\n    \"body\": {\n      \"subtitle\": {\n        \"subtitle_body\": \"string\",\n        \"publisher_list\": [\n          \"string\",\n          \"string\"\n        ],\n        \"subtitle_language\": \"string\",\n        \"subtitle_language_description\": \"string\",\n        \"subtitle_id\": 6526.025039605435,\n        \"pixel_tracking_url\": \"string\",\n        \"html_tracking_url\": \"string\",\n        \"restricted\": 22.073549561072436,\n        \"lyrics_copyright\": \"string\",\n        \"script_tracking_url\": \"string\",\n        \"subtitle_length\": 2183.622557630318,\n        \"updated_time\": \"string\",\n        \"writer_list\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ed24c85-3c85-445e-ba9d-5b8f030459a9",
+          "name": "/track.subtitle.get",
+          "request": {
+            "name": "/track.subtitle.get",
+            "description": {},
+            "url": {
+              "path": [
+                "track.subtitle.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "track_id",
+                  "value": "<string>",
+                  "description": "(Required) The musiXmatch track id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "654b2081-c682-4f5f-aefd-f46aef2b6b9c",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "track.subtitle.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "track_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 7764.392052040389,\n      \"execute_time\": 6168.390411459155\n    },\n    \"body\": {\n      \"subtitle\": {\n        \"subtitle_body\": \"string\",\n        \"publisher_list\": [\n          \"string\",\n          \"string\"\n        ],\n        \"subtitle_language\": \"string\",\n        \"subtitle_language_description\": \"string\",\n        \"subtitle_id\": 9613.896374400112,\n        \"pixel_tracking_url\": \"string\",\n        \"html_tracking_url\": \"string\",\n        \"restricted\": 4539.034139389973,\n        \"lyrics_copyright\": \"string\",\n        \"script_tracking_url\": \"string\",\n        \"subtitle_length\": 4624.392027597159,\n        \"updated_time\": \"string\",\n        \"writer_list\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.musixmatch.com/ws/1.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "35356225-36e4-4859-9f79-00f33a5b81b0",
+    "name": "Musixmatch Album Subtitle API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe most powerful and legal way to display lyrics on your website or in\nyour application. Musixmatch lyrics API is a robust service that permits\nyou to search and retrieve lyrics in the simplest possible way.\n\nContact Support:\n Name: Musixmatch\n Email: info@musixmatch.com",
+      "type": "text/plain"
+    }
+  }
+}

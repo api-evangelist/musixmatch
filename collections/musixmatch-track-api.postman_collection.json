@@ -1,0 +1,844 @@
+{
+  "item": [
+    {
+      "id": "349dba9e-bf08-4040-9135-5b1ab9679e5b",
+      "name": "Track",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "39f870f0-e06e-434b-b4f1-7880a846b11e",
+          "name": "/album.tracks.get",
+          "request": {
+            "name": "/album.tracks.get",
+            "description": {},
+            "url": {
+              "path": [
+                "album.tracks.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "album_id",
+                  "value": "<string>",
+                  "description": "(Required) The musiXmatch album id"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_has_lyrics",
+                  "value": "<string>",
+                  "description": "When set, filter only contents with lyrics"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>",
+                  "description": "Define the page number for paginated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<number>",
+                  "description": "Define the page size for paginated results.Range is 1 to 100."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "eeb44bbc-e462-422a-a928-2c3bc179e4f9",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "album.tracks.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "album_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "f_has_lyrics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 5963.694204653636,\n      \"available\": 8744.073500736518,\n      \"execute_time\": 9443.031632005825\n    },\n    \"body\": {\n      \"track_list\": [\n        {\n          \"instrumental\": 6280.777036199053,\n          \"album_coverart_350x350\": \"string\",\n          \"first_release_date\": \"string\",\n          \"track_isrc\": \"string\",\n          \"explicit\": 7802.0057400597125,\n          \"track_edit_url\": \"string\",\n          \"num_favourite\": 1744.3003015529312,\n          \"album_coverart_500x500\": \"string\",\n          \"album_name\": \"string\",\n          \"track_rating\": 738.4471092796751,\n          \"track_share_url\": \"string\",\n          \"track_soundcloud_id\": 5517.202679961355,\n          \"artist_name\": \"string\",\n          \"album_coverart_800x800\": \"string\",\n          \"album_coverart_100x100\": \"string\",\n          \"track_name_translation_list\": [\n            \"string\",\n            \"string\"\n          ],\n          \"track_name\": \"string\",\n          \"restricted\": 6222.881056222877,\n          \"has_subtitles\": 9854.963947963843,\n          \"updated_time\": \"string\",\n          \"subtitle_id\": 9157.197991324523,\n          \"lyrics_id\": 5602.410605097119,\n          \"track_spotify_id\": \"string\",\n          \"has_lyrics\": 5246.951026401035,\n          \"artist_id\": 2982.0298341134967,\n          \"album_id\": 7542.117218846536,\n          \"artist_mbid\": \"string\",\n          \"secondary_genres\": {\n            \"music_genre_list\": [\n              {\n                \"music_genre\": {\n                  \"music_genre_vanity\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name_extended\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_parent_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"music_genre\": {\n                  \"music_genre_vanity\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name_extended\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_parent_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ]\n          },\n          \"commontrack_vanity_id\": \"string\",\n          \"track_id\": 8607.979429179717,\n          \"track_xboxmusic_id\": \"string\",\n          \"primary_genres\": {\n            \"music_genre_list\": [\n              {\n                \"music_genre\": {\n                  \"music_genre_vanity\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name_extended\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_parent_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"music_genre\": {\n                  \"music_genre_vanity\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name_extended\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_parent_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ]\n          },\n          \"track_length\": 4339.689003509969,\n          \"track_mbid\": \"string\",\n          \"commontrack_id\": 5195.301347376024\n        },\n        {\n          \"instrumental\": 1968.7766461397193,\n          \"album_coverart_350x350\": \"string\",\n          \"first_release_date\": \"string\",\n          \"track_isrc\": \"string\",\n          \"explicit\": 9681.931405711755,\n          \"track_edit_url\": \"string\",\n          \"num_favourite\": 3420.90971018288,\n          \"album_coverart_500x500\": \"string\",\n          \"album_name\": \"string\",\n          \"track_rating\": 6858.904944712119,\n          \"track_share_url\": \"string\",\n          \"track_soundcloud_id\": 7589.965045513297,\n          \"artist_name\": \"string\",\n          \"album_coverart_800x800\": \"string\",\n          \"album_coverart_100x100\": \"string\",\n          \"track_name_translation_list\": [\n            \"string\",\n            \"string\"\n          ],\n          \"track_name\": \"string\",\n          \"restricted\": 869.5576696203134,\n          \"has_subtitles\": 5061.520238937571,\n          \"updated_time\": \"string\",\n          \"subtitle_id\": 4675.787977625957,\n          \"lyrics_id\": 6908.398712039506,\n          \"track_spotify_id\": \"string\",\n          \"has_lyrics\": 5627.976273219733,\n          \"artist_id\": 322.0199937002299,\n          \"album_id\": 6516.621522974128,\n          \"artist_mbid\": \"string\",\n          \"secondary_genres\": {\n            \"music_genre_list\": [\n              {\n                \"music_genre\": {\n                  \"music_genre_vanity\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name_extended\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_parent_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"music_genre\": {\n                  \"music_genre_vanity\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name_extended\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_parent_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ]\n          },\n          \"commontrack_vanity_id\": \"string\",\n          \"track_id\": 1130.7228217631105,\n          \"track_xboxmusic_id\": \"string\",\n          \"primary_genres\": {\n            \"music_genre_list\": [\n              {\n                \"music_genre\": {\n                  \"music_genre_vanity\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name_extended\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_parent_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              },\n              {\n                \"music_genre\": {\n                  \"music_genre_vanity\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name_extended\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_name\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_parent_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"music_genre_id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              }\n            ]\n          },\n          \"track_length\": 141.87435812671345,\n          \"track_mbid\": \"string\",\n          \"commontrack_id\": 7938.1903911273275\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cca4dbfd-48c0-4001-8ac1-e65930e4ff6b",
+          "name": "/matcher.track.get",
+          "request": {
+            "name": "/matcher.track.get",
+            "description": {},
+            "url": {
+              "path": [
+                "matcher.track.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_artist",
+                  "value": "<string>",
+                  "description": "The song artist"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_track",
+                  "value": "<string>",
+                  "description": "The song title"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_has_lyrics",
+                  "value": "<number>",
+                  "description": "When set, filter only contents with lyrics"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_has_subtitle",
+                  "value": "<number>",
+                  "description": "When set, filter only contents with subtitles"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e620874d-5200-44f6-8633-9795257caa18",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "matcher.track.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_artist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_track",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "f_has_lyrics",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "f_has_subtitle",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 3198.719787292341,\n      \"execute_time\": 6030.396719567722\n    },\n    \"body\": {\n      \"track\": {\n        \"instrumental\": 1792.2245120392088,\n        \"album_coverart_350x350\": \"string\",\n        \"first_release_date\": \"string\",\n        \"track_isrc\": \"string\",\n        \"explicit\": 2128.8531399943,\n        \"track_edit_url\": \"string\",\n        \"num_favourite\": 8161.576182130688,\n        \"album_coverart_500x500\": \"string\",\n        \"album_name\": \"string\",\n        \"track_rating\": 5518.6678022285,\n        \"track_share_url\": \"string\",\n        \"track_soundcloud_id\": 1751.3885788225757,\n        \"artist_name\": \"string\",\n        \"album_coverart_800x800\": \"string\",\n        \"album_coverart_100x100\": \"string\",\n        \"track_name_translation_list\": [\n          \"string\",\n          \"string\"\n        ],\n        \"track_name\": \"string\",\n        \"restricted\": 9750.81997554709,\n        \"has_subtitles\": 9607.000358330559,\n        \"updated_time\": \"string\",\n        \"subtitle_id\": 3946.19520244874,\n        \"lyrics_id\": 1100.5811260627618,\n        \"track_spotify_id\": \"string\",\n        \"has_lyrics\": 3932.4294000296777,\n        \"artist_id\": 7179.830199378657,\n        \"album_id\": 6409.124976896871,\n        \"artist_mbid\": \"string\",\n        \"secondary_genres\": {\n          \"music_genre_list\": [\n            {\n              \"music_genre\": {\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_parent_id\": 6808.999884041497,\n                \"music_genre_name\": \"string\",\n                \"music_genre_id\": 9881.743519625961\n              }\n            },\n            {\n              \"music_genre\": {\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_parent_id\": 852.568593661458,\n                \"music_genre_name\": \"string\",\n                \"music_genre_id\": 5807.593614150693\n              }\n            }\n          ]\n        },\n        \"commontrack_vanity_id\": \"string\",\n        \"track_id\": 3793.5085487947163,\n        \"track_xboxmusic_id\": \"string\",\n        \"primary_genres\": {\n          \"music_genre_list\": [\n            {\n              \"music_genre\": {\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_name\": \"string\",\n                \"music_genre_parent_id\": 3599.7110739541595,\n                \"music_genre_id\": 1647.0880382042064\n              }\n            },\n            {\n              \"music_genre\": {\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_name\": \"string\",\n                \"music_genre_parent_id\": 6319.303742551738,\n                \"music_genre_id\": 3731.980643355868\n              }\n            }\n          ]\n        },\n        \"track_length\": 1388.355594034797,\n        \"track_mbid\": \"string\",\n        \"commontrack_id\": 3749.7334160204578\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cad60f4b-bf84-4951-9457-00f9e43a8bec",
+          "name": "/track.get",
+          "request": {
+            "name": "/track.get",
+            "description": {},
+            "url": {
+              "path": [
+                "track.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "track_id",
+                  "value": "<string>",
+                  "description": "(Required) The musiXmatch track id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "177b474b-edc4-4018-9e78-c5b2cc4f4684",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "track.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "track_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"status_code\": 3198.719787292341,\n      \"execute_time\": 6030.396719567722\n    },\n    \"body\": {\n      \"track\": {\n        \"instrumental\": 1792.2245120392088,\n        \"album_coverart_350x350\": \"string\",\n        \"first_release_date\": \"string\",\n        \"track_isrc\": \"string\",\n        \"explicit\": 2128.8531399943,\n        \"track_edit_url\": \"string\",\n        \"num_favourite\": 8161.576182130688,\n        \"album_coverart_500x500\": \"string\",\n        \"album_name\": \"string\",\n        \"track_rating\": 5518.6678022285,\n        \"track_share_url\": \"string\",\n        \"track_soundcloud_id\": 1751.3885788225757,\n        \"artist_name\": \"string\",\n        \"album_coverart_800x800\": \"string\",\n        \"album_coverart_100x100\": \"string\",\n        \"track_name_translation_list\": [\n          \"string\",\n          \"string\"\n        ],\n        \"track_name\": \"string\",\n        \"restricted\": 9750.81997554709,\n        \"has_subtitles\": 9607.000358330559,\n        \"updated_time\": \"string\",\n        \"subtitle_id\": 3946.19520244874,\n        \"lyrics_id\": 1100.5811260627618,\n        \"track_spotify_id\": \"string\",\n        \"has_lyrics\": 3932.4294000296777,\n        \"artist_id\": 7179.830199378657,\n        \"album_id\": 6409.124976896871,\n        \"artist_mbid\": \"string\",\n        \"secondary_genres\": {\n          \"music_genre_list\": [\n            {\n              \"music_genre\": {\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_parent_id\": 6808.999884041497,\n                \"music_genre_name\": \"string\",\n                \"music_genre_id\": 9881.743519625961\n              }\n            },\n            {\n              \"music_genre\": {\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_parent_id\": 852.568593661458,\n                \"music_genre_name\": \"string\",\n                \"music_genre_id\": 5807.593614150693\n              }\n            }\n          ]\n        },\n        \"commontrack_vanity_id\": \"string\",\n        \"track_id\": 3793.5085487947163,\n        \"track_xboxmusic_id\": \"string\",\n        \"primary_genres\": {\n          \"music_genre_list\": [\n            {\n              \"music_genre\": {\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_name\": \"string\",\n                \"music_genre_parent_id\": 3599.7110739541595,\n                \"music_genre_id\": 1647.0880382042064\n              }\n            },\n            {\n              \"music_genre\": {\n                \"music_genre_vanity\": \"string\",\n                \"music_genre_name_extended\": \"string\",\n                \"music_genre_name\": \"string\",\n                \"music_genre_parent_id\": 6319.303742551738,\n                \"music_genre_id\": 3731.980643355868\n              }\n            }\n          ]\n        },\n        \"track_length\": 1388.355594034797,\n        \"track_mbid\": \"string\",\n        \"commontrack_id\": 3749.7334160204578\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "afd8a732-57f1-4328-8419-b4595714e796",
+          "name": "/track.search",
+          "request": {
+            "name": "/track.search",
+            "description": {},
+            "url": {
+              "path": [
+                "track.search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_track",
+                  "value": "<string>",
+                  "description": "The song title"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_artist",
+                  "value": "<string>",
+                  "description": "The song artist"
+                },
+                {
+                  "disabled": false,
+                  "key": "q_lyrics",
+                  "value": "<string>",
+                  "description": "Any word in the lyrics"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_artist_id",
+                  "value": "<number>",
+                  "description": "When set, filter by this artist id"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_music_genre_id",
+                  "value": "<number>",
+                  "description": "When set, filter by this music category id"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_lyrics_language",
+                  "value": "<number>",
+                  "description": "Filter by the lyrics language (en,it,..)"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_has_lyrics",
+                  "value": "<number>",
+                  "description": "When set, filter only contents with lyrics"
+                },
+                {
+                  "disabled": false,
+                  "key": "s_artist_rating",
+                  "value": "<string>",
+                  "description": "Sort by our popularity index for artists (asc|desc)"
+                },
+                {
+                  "disabled": false,
+                  "key": "s_track_rating",
+                  "value": "<string>",
+                  "description": "Sort by our popularity index for tracks (asc|desc)"
+                },
+                {
+                  "disabled": false,
+                  "key": "quorum_factor",
+                  "value": "1",
+                  "description": "Search only a part of the given query string.Allowed range is (0.1  0.9)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<number>",
+                  "description": "Define the page size for paginated results.Range is 1 to 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>",
+                  "description": "Define the page number for paginated results"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "de1143e7-cb21-44bf-b28c-413d773bea83",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "track.search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_track",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_artist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q_lyrics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "f_artist_id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "f_music_genre_id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "f_lyrics_language",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "f_has_lyrics",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "s_artist_rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "s_track_rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "quorum_factor",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"available\": 9333.172244890937,\n      \"status_code\": 1736.8329885681133,\n      \"execute_time\": 9047.507830151999\n    },\n    \"body\": {\n      \"track_list\": [\n        {\n          \"track\": {\n            \"instrumental\": 9304.485418469754,\n            \"album_coverart_350x350\": \"string\",\n            \"first_release_date\": \"string\",\n            \"track_isrc\": \"string\",\n            \"explicit\": 4595.417249307193,\n            \"track_edit_url\": \"string\",\n            \"num_favourite\": 539.6221600289974,\n            \"album_coverart_500x500\": \"string\",\n            \"album_name\": \"string\",\n            \"track_rating\": 73.04428369963145,\n            \"track_share_url\": \"string\",\n            \"track_soundcloud_id\": 2997.4418730831267,\n            \"artist_name\": \"string\",\n            \"album_coverart_800x800\": \"string\",\n            \"album_coverart_100x100\": \"string\",\n            \"track_name_translation_list\": [\n              \"string\",\n              \"string\"\n            ],\n            \"track_name\": \"string\",\n            \"restricted\": 7964.552080742909,\n            \"has_subtitles\": 5099.573956445468,\n            \"updated_time\": \"string\",\n            \"subtitle_id\": 5999.101085438216,\n            \"lyrics_id\": 7498.893299534131,\n            \"track_spotify_id\": \"string\",\n            \"has_lyrics\": 7067.378562162846,\n            \"artist_id\": 6075.734324561931,\n            \"album_id\": 3691.4711461788575,\n            \"artist_mbid\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"commontrack_vanity_id\": \"string\",\n            \"track_id\": 7944.478417050677,\n            \"track_xboxmusic_id\": \"string\",\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"track_length\": 445.6137147485084,\n            \"track_mbid\": \"string\",\n            \"commontrack_id\": 940.6281073132005\n          }\n        },\n        {\n          \"track\": {\n            \"instrumental\": 3380.477170875117,\n            \"album_coverart_350x350\": \"string\",\n            \"first_release_date\": \"string\",\n            \"track_isrc\": \"string\",\n            \"explicit\": 8178.53013769821,\n            \"track_edit_url\": \"string\",\n            \"num_favourite\": 1839.2414395250146,\n            \"album_coverart_500x500\": \"string\",\n            \"album_name\": \"string\",\n            \"track_rating\": 2823.918042337088,\n            \"track_share_url\": \"string\",\n            \"track_soundcloud_id\": 4433.377215949148,\n            \"artist_name\": \"string\",\n            \"album_coverart_800x800\": \"string\",\n            \"album_coverart_100x100\": \"string\",\n            \"track_name_translation_list\": [\n              \"string\",\n              \"string\"\n            ],\n            \"track_name\": \"string\",\n            \"restricted\": 239.6819605621503,\n            \"has_subtitles\": 2652.917179348324,\n            \"updated_time\": \"string\",\n            \"subtitle_id\": 1769.3406145283975,\n            \"lyrics_id\": 2853.218568254806,\n            \"track_spotify_id\": \"string\",\n            \"has_lyrics\": 153.68914675480627,\n            \"artist_id\": 9970.998488411207,\n            \"album_id\": 5416.766728771837,\n            \"artist_mbid\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"commontrack_vanity_id\": \"string\",\n            \"track_id\": 3664.416537423326,\n            \"track_xboxmusic_id\": \"string\",\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"track_length\": 1579.0583612712471,\n            \"track_mbid\": \"string\",\n            \"commontrack_id\": 5191.809248867085\n          }\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9aa7b696-7453-4628-806c-7a7b07739ee3",
+          "name": "/chart.tracks.get",
+          "request": {
+            "name": "/chart.tracks.get",
+            "description": {},
+            "url": {
+              "path": [
+                "chart.tracks.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json",
+                  "description": "output format: json, jsonp, xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "jsonp callback"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>",
+                  "description": "Define the page number for paginated results"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<number>",
+                  "description": "Define the page size for paginated results.Range is 1 to 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "us",
+                  "description": "A valid ISO 3166 country code"
+                },
+                {
+                  "disabled": false,
+                  "key": "f_has_lyrics",
+                  "value": "<string>",
+                  "description": "When set, filter only contents with lyrics"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "apikey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c62f7e3a-277a-4044-9234-4864b8deb605",
+              "name": "The request was successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "chart.tracks.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "us"
+                    },
+                    {
+                      "key": "f_has_lyrics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"header\": {\n      \"available\": 9333.172244890937,\n      \"status_code\": 1736.8329885681133,\n      \"execute_time\": 9047.507830151999\n    },\n    \"body\": {\n      \"track_list\": [\n        {\n          \"track\": {\n            \"instrumental\": 9304.485418469754,\n            \"album_coverart_350x350\": \"string\",\n            \"first_release_date\": \"string\",\n            \"track_isrc\": \"string\",\n            \"explicit\": 4595.417249307193,\n            \"track_edit_url\": \"string\",\n            \"num_favourite\": 539.6221600289974,\n            \"album_coverart_500x500\": \"string\",\n            \"album_name\": \"string\",\n            \"track_rating\": 73.04428369963145,\n            \"track_share_url\": \"string\",\n            \"track_soundcloud_id\": 2997.4418730831267,\n            \"artist_name\": \"string\",\n            \"album_coverart_800x800\": \"string\",\n            \"album_coverart_100x100\": \"string\",\n            \"track_name_translation_list\": [\n              \"string\",\n              \"string\"\n            ],\n            \"track_name\": \"string\",\n            \"restricted\": 7964.552080742909,\n            \"has_subtitles\": 5099.573956445468,\n            \"updated_time\": \"string\",\n            \"subtitle_id\": 5999.101085438216,\n            \"lyrics_id\": 7498.893299534131,\n            \"track_spotify_id\": \"string\",\n            \"has_lyrics\": 7067.378562162846,\n            \"artist_id\": 6075.734324561931,\n            \"album_id\": 3691.4711461788575,\n            \"artist_mbid\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"commontrack_vanity_id\": \"string\",\n            \"track_id\": 7944.478417050677,\n            \"track_xboxmusic_id\": \"string\",\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"track_length\": 445.6137147485084,\n            \"track_mbid\": \"string\",\n            \"commontrack_id\": 940.6281073132005\n          }\n        },\n        {\n          \"track\": {\n            \"instrumental\": 3380.477170875117,\n            \"album_coverart_350x350\": \"string\",\n            \"first_release_date\": \"string\",\n            \"track_isrc\": \"string\",\n            \"explicit\": 8178.53013769821,\n            \"track_edit_url\": \"string\",\n            \"num_favourite\": 1839.2414395250146,\n            \"album_coverart_500x500\": \"string\",\n            \"album_name\": \"string\",\n            \"track_rating\": 2823.918042337088,\n            \"track_share_url\": \"string\",\n            \"track_soundcloud_id\": 4433.377215949148,\n            \"artist_name\": \"string\",\n            \"album_coverart_800x800\": \"string\",\n            \"album_coverart_100x100\": \"string\",\n            \"track_name_translation_list\": [\n              \"string\",\n              \"string\"\n            ],\n            \"track_name\": \"string\",\n            \"restricted\": 239.6819605621503,\n            \"has_subtitles\": 2652.917179348324,\n            \"updated_time\": \"string\",\n            \"subtitle_id\": 1769.3406145283975,\n            \"lyrics_id\": 2853.218568254806,\n            \"track_spotify_id\": \"string\",\n            \"has_lyrics\": 153.68914675480627,\n            \"artist_id\": 9970.998488411207,\n            \"album_id\": 5416.766728771837,\n            \"artist_mbid\": \"string\",\n            \"secondary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"commontrack_vanity_id\": \"string\",\n            \"track_id\": 3664.416537423326,\n            \"track_xboxmusic_id\": \"string\",\n            \"primary_genres\": {\n              \"music_genre_list\": [\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                {\n                  \"music_genre\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                }\n              ]\n            },\n            \"track_length\": 1579.0583612712471,\n            \"track_mbid\": \"string\",\n            \"commontrack_id\": 5191.809248867085\n          }\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.musixmatch.com/ws/1.1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "527688b5-2c40-4672-ab43-852bee0ff387",
+    "name": "Musixmatch Album Track API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe most powerful and legal way to display lyrics on your website or in\nyour application. Musixmatch lyrics API is a robust service that permits\nyou to search and retrieve lyrics in the simplest possible way.\n\nContact Support:\n Name: Musixmatch\n Email: info@musixmatch.com",
+      "type": "text/plain"
+    }
+  }
+}
