@@ -59,7 +59,7 @@ apis:
   humanURL: https://developer.musixmatch.com/documentation
   baseURL: https://api.musixmatch.com/ws/1.1/
   tags:
-  - Artist
+  - Artists
   tags_raw:
   - Artist
   properties:
