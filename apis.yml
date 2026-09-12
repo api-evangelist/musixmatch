@@ -127,6 +127,8 @@ apis:
   - type: GraphQL
     url: graphql/musixmatch-graphql.md
 common:
+- type: Website
+  url: https://www.musixmatch.com/
 - type: AgenticAccess
   url: agentic-access/musixmatch-agentic-access.yml
 - type: DomainSecurity
