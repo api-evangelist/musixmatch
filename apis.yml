@@ -38,6 +38,10 @@ specificationVersion: '0.23'
 tags:
 - Lyrics
 - Music
+- Translation
+tags_raw:
+- Lyrics
+- Music
 - Translations
 apis:
 - aid: musixmatch:musixmatch-album-api
