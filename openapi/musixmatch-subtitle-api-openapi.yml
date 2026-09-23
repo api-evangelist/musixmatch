@@ -1,9 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Musixmatch Album Subtitle API
-  description: '
-
-    The most powerful and legal way to display lyrics on your website or in
+  title: Musixmatch Subtitle API
+  description: 'The most powerful and legal way to display lyrics on your website or in
 
     your application. Musixmatch lyrics API is a robust service that permits
 
@@ -88,6 +86,10 @@ paths:
                             $ref: '#/components/schemas/Subtitle'
       security:
       - key: []
+      summary: Get matcher subtitle get
+      x-summary-source: derived
+      operationId: getMatcherSubtitleGet
+      x-operation-id-source: derived
   /track.subtitle.get:
     get:
       tags:
@@ -137,6 +139,10 @@ paths:
                             $ref: '#/components/schemas/Subtitle'
       security:
       - key: []
+      summary: Get track subtitle get
+      x-summary-source: derived
+      operationId: getTrackSubtitleGet
+      x-operation-id-source: derived
 components:
   schemas:
     Subtitle:

@@ -1,9 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Musixmatch Album Artist API
-  description: '
-
-    The most powerful and legal way to display lyrics on your website or in
+  title: Musixmatch Artist API
+  description: 'The most powerful and legal way to display lyrics on your website or in
 
     your application. Musixmatch lyrics API is a robust service that permits
 
@@ -93,6 +91,10 @@ paths:
                                   $ref: '#/components/schemas/Artist'
       security:
       - key: []
+      summary: Get artist related get
+      x-summary-source: derived
+      operationId: getArtistRelatedGet
+      x-operation-id-source: derived
   /artist.search:
     get:
       tags:
@@ -165,6 +167,10 @@ paths:
                                   $ref: '#/components/schemas/Artist'
       security:
       - key: []
+      summary: Get artist search
+      x-summary-source: derived
+      operationId: getArtistSearch
+      x-operation-id-source: derived
   /artist.get:
     get:
       tags:
@@ -214,6 +220,10 @@ paths:
                             $ref: '#/components/schemas/Artist'
       security:
       - key: []
+      summary: Get artist get
+      x-summary-source: derived
+      operationId: getArtistGet
+      x-operation-id-source: derived
   /chart.artists.get:
     get:
       tags:
@@ -281,6 +291,10 @@ paths:
                                   $ref: '#/components/schemas/Artist'
       security:
       - key: []
+      summary: Get chart artists get
+      x-summary-source: derived
+      operationId: getChartArtistsGet
+      x-operation-id-source: derived
 components:
   schemas:
     Artist:

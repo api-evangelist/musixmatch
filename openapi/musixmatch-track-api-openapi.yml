@@ -1,9 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Musixmatch Album Track API
-  description: '
-
-    The most powerful and legal way to display lyrics on your website or in
+  title: Musixmatch Track API
+  description: 'The most powerful and legal way to display lyrics on your website or in
 
     your application. Musixmatch lyrics API is a robust service that permits
 
@@ -95,6 +93,10 @@ paths:
                               $ref: '#/components/schemas/Track'
       security:
       - key: []
+      summary: Get album tracks get
+      x-summary-source: derived
+      operationId: getAlbumTracksGet
+      x-operation-id-source: derived
   /matcher.track.get:
     get:
       tags:
@@ -158,6 +160,10 @@ paths:
                             $ref: '#/components/schemas/Track'
       security:
       - key: []
+      summary: Get matcher track get
+      x-summary-source: derived
+      operationId: getMatcherTrackGet
+      x-operation-id-source: derived
   /track.get:
     get:
       tags:
@@ -207,6 +213,10 @@ paths:
                             $ref: '#/components/schemas/Track'
       security:
       - key: []
+      summary: Get track get
+      x-summary-source: derived
+      operationId: getTrackGet
+      x-operation-id-source: derived
   /track.search:
     get:
       tags:
@@ -319,6 +329,10 @@ paths:
                                   $ref: '#/components/schemas/Track'
       security:
       - key: []
+      summary: Get track search
+      x-summary-source: derived
+      operationId: getTrackSearch
+      x-operation-id-source: derived
   /chart.tracks.get:
     get:
       tags:
@@ -391,6 +405,10 @@ paths:
                                   $ref: '#/components/schemas/Track'
       security:
       - key: []
+      summary: Get chart tracks get
+      x-summary-source: derived
+      operationId: getChartTracksGet
+      x-operation-id-source: derived
 components:
   schemas:
     Track:
