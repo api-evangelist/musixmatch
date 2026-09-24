@@ -56,8 +56,6 @@ apis:
     url: openapi/musixmatch-album-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: GraphQL
-    url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-artist-api
   name: Musixmatch Artist API
   description: The Artist API from Musixmatch — 4 operation(s) for artist.
@@ -72,8 +70,6 @@ apis:
     url: openapi/musixmatch-artist-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: GraphQL
-    url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-lyrics-api
   name: Musixmatch Lyrics API
   description: The Lyrics API from Musixmatch — 2 operation(s) for lyrics.
@@ -86,8 +82,6 @@ apis:
     url: openapi/musixmatch-lyrics-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: GraphQL
-    url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-snippets-api
   name: Musixmatch Snippets API
   description: The Snippets API from Musixmatch — 1 operation(s) for snippets.
@@ -100,8 +94,6 @@ apis:
     url: openapi/musixmatch-snippets-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: GraphQL
-    url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-subtitle-api
   name: Musixmatch Subtitle API
   description: The Subtitle API from Musixmatch — 2 operation(s) for subtitle.
@@ -114,8 +106,6 @@ apis:
     url: openapi/musixmatch-subtitle-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: GraphQL
-    url: graphql/musixmatch-graphql.md
 - aid: musixmatch:musixmatch-track-api
   name: Musixmatch Track API
   description: The Track API from Musixmatch — 5 operation(s) for track.
@@ -128,8 +118,6 @@ apis:
     url: openapi/musixmatch-track-api-openapi.yml
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
-  - type: GraphQL
-    url: graphql/musixmatch-graphql.md
 common:
 - type: Website
   url: https://www.musixmatch.com/
