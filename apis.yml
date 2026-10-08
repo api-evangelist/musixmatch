@@ -119,6 +119,12 @@ apis:
   - type: Documentation
     url: https://developer.musixmatch.com/documentation
 common:
+- type: Plans
+  url: plans/musixmatch-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/musixmatch-rate-limits.yml
+- type: FinOps
+  url: finops/musixmatch-finops.yml
 - type: Website
   url: https://www.musixmatch.com/
 - type: AgenticAccess
