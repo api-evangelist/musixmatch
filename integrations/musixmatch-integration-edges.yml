@@ -25,8 +25,41 @@ edges:
     builder: unknown (not in the directory record)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Podcast Index (apps directory)
+  partner: podcastindex
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: standard-participant
+  evidence: https://podcastindex.org/apps
+  category: open podcast namespace (Podcasting 2.0)
+  contract_reference:
+    register: Podcast Index apps directory (podcastindex.org/api/apps)
+    standard: 'podcast: RSS namespace (Podcasting 2.0)'
+    spec_file: null
+    role: podcastindex-listed-app
+    registered_name: Musixmatch Podcasts
+    register_id: https://podcasts.musixmatch.com
+    app_types:
+    - app
+    supported_elements:
+    - Transcript
+    matched_domain: musixmatch.com
+    matched_by: domain
+    signal_note: 'participation only: the directory is self-listed and tests nothing (no certified_products); supported_elements
+      is a per-edge signal, never counted'
+    detected_by: sweep-podcasting-2-0.py
+    detected: '2026-10-21'
+  detected_by: sweep-podcasting-2-0.py
+  first_seen: '2026-10-21'
 method: searched
 checked:
 - https://zapier.com/api/v4/apps/
+- https://iabtechlab.com/compliance-programs/compliant-companies/
+- https://podcasters.apple.com/partner-search
+- https://podcastindex.org/api/apps
+- https://raw.githubusercontent.com/Podcastindex-org/podcast-namespace/main/docs/element-support.md
+- https://support.spotify.com/us/creators/article/getting-your-podcast-on-spotify/
 source:
 - https://zapier.com/api/v4/apps/

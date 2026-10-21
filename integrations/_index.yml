@@ -28,3 +28,32 @@
     builder: unknown (not in the directory record)
   status: not-a-workflow
   arazzo: null
+- slug: musixmatch-podcast-index-apps-directory
+  label: Podcast Index (apps directory)
+  partner: podcastindex
+  partner_name: Podcast Index (apps directory)
+  category: open podcast namespace (Podcasting 2.0)
+  type: register
+  channel: standard-directory
+  evidence: https://podcastindex.org/apps
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Podcast Index apps directory (podcastindex.org/api/apps)
+    standard: 'podcast: RSS namespace (Podcasting 2.0)'
+    spec_file: null
+    role: podcastindex-listed-app
+    registered_name: Musixmatch Podcasts
+    register_id: https://podcasts.musixmatch.com
+    app_types:
+    - app
+    supported_elements:
+    - Transcript
+    matched_domain: musixmatch.com
+    matched_by: domain
+    signal_note: 'participation only: the directory is self-listed and tests nothing (no certified_products); supported_elements
+      is a per-edge signal, never counted'
+    detected_by: sweep-podcasting-2-0.py
+    detected: '2026-10-21'
+  status: not-a-workflow
+  arazzo: null
