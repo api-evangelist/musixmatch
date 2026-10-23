@@ -578,3 +578,9 @@ externalDocs:
   description: Find out more about Musixmatch API
   url: https://developer.musixmatch.com/
 x-original-swagger-version: '2.0'
+x-provenance:
+  method: harvested
+  publisher: Musixmatch
+  source: https://raw.githubusercontent.com/musixmatch/musixmatch-sdk/master/swagger/swagger.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
