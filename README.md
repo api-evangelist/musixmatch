@@ -1,4 +1,4 @@
-# Musixmatch (musixmatch)
+# Musixmatch
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,65 +64,133 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Musixmatch is an Italian music data company and platform for users to search
-and share song lyrics with translations. Musixmatch has 80 million users, 8
-million songs with their respective lyrics, and 115+ employees.
+Musixmatch is an Italian music data company and platform for users to search and share song lyrics with translations. Musixmatch has 80 million users, 8 million songs with their respective lyrics, and 115+ employees.
 
-**URL:** [Visit APIs.json URL](
-https://raw.githubusercontent.com/api-search/music/main/_apis/musixmatch/apis.md)
+**Areas:** Lyrics · Music · Translation
 
-## Scope
+## Musixmatch on APIs.io
 
-- **Type:** Contract 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+Everything profiled for Musixmatch is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/musixmatch/](https://apis.io/providers/musixmatch/)** — or go straight to one of the APIs or properties below.
 
-## Tags:
+### APIs (6)
 
- - Music, Lyrics, Translations
+- [Musixmatch Album API](https://apis.io/apis/musixmatch/musixmatch-album-api/) — The Album API from Musixmatch — 2 operation(s) for album.
+- [Musixmatch Artist API](https://apis.io/apis/musixmatch/musixmatch-artist-api/) — The Artist API from Musixmatch — 4 operation(s) for artist.
+- [Musixmatch Lyrics API](https://apis.io/apis/musixmatch/musixmatch-lyrics-api/) — The Lyrics API from Musixmatch — 2 operation(s) for lyrics.
+- [Musixmatch Snippets API](https://apis.io/apis/musixmatch/musixmatch-snippets-api/) — The Snippets API from Musixmatch — 1 operation(s) for snippets.
+- [Musixmatch Subtitle API](https://apis.io/apis/musixmatch/musixmatch-subtitle-api/) — The Subtitle API from Musixmatch — 2 operation(s) for subtitle.
+- [Musixmatch Track API](https://apis.io/apis/musixmatch/musixmatch-track-api/) — The Track API from Musixmatch — 5 operation(s) for track.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-06-07 
-- **Modified:** 2026-04-28 
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### GraphQL (1)
 
-### Musixmatch API
+GraphQL schemas.
 
-The most powerful and legal way to display lyrics on your website or in
-your application. Musixmatch lyrics API is a robust service that permits
-you to search and retrieve lyrics in the simplest possible way.
+- [Moved to /providers/musixmatch/](https://apis.io/graphqls/musixmatch/musixmatch-graphql/)
 
-**Human URL:** [https://developer.musixmatch.com/documentation](https://developer.musixmatch.com/documentation)
+#### Agentic access (1)
 
-**Base URL:** [https://api.musixmatch.com/ws/1.1/](https://api.musixmatch.com/ws/1.1/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
+- [Musixmatch Agentic Access](https://apis.io/agentic-access/musixmatch/musixmatch-agentic-access/)
 
-#### Tags:
+#### Collections (6)
 
- - Track, Album, Artist, Subtitle, Lyrics, Snippets
+Postman and Open Collection request collections.
 
-#### Properties
+- [Musixmatch Album API](https://apis.io/collections/musixmatch/open-musixmatch-album-api/)
+- [Musixmatch Album Artist API](https://apis.io/collections/musixmatch/open-musixmatch-artist-api/)
+- [Musixmatch Album Lyrics API](https://apis.io/collections/musixmatch/open-musixmatch-lyrics-api/)
+- [Musixmatch Album Snippets API](https://apis.io/collections/musixmatch/open-musixmatch-snippets-api/)
+- [Musixmatch Album Subtitle API](https://apis.io/collections/musixmatch/open-musixmatch-subtitle-api/)
+- [Musixmatch Album Track API](https://apis.io/collections/musixmatch/open-musixmatch-track-api/)
 
-- [Documentation](https://developer.musixmatch.com/documentation)
-- [OpenAPI](openapi/musixmatch-openapi-original.yml)
+#### Security (2)
 
-## Common Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Developer](https://developer.musixmatch.com/)
-- [Login](https://developer.musixmatch.com/login)
-- [Brand Kit](https://about.musixmatch.com/brand-resources)
+- [Musixmatch Authentication](https://apis.io/security/musixmatch/musixmatch-authentication/)
+- [Musixmatch Domain Security](https://apis.io/security/musixmatch/musixmatch-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Musixmatch Plans Pricing](https://apis.io/plans/musixmatch/musixmatch-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Musixmatch Rate Limits](https://apis.io/rate-limits/musixmatch/musixmatch-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Musixmatch Finops](https://apis.io/finops/musixmatch/musixmatch-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.musixmatch.com/)
 - [Blog](https://blog.musixmatch.com/)
-- [Status Codes](https://developer.musixmatch.com/documentation/status-codes)
-- [Checklist](https://developer.musixmatch.com/documentation/checklist-before-going-live)
-- [Best Practices](https://developer.musixmatch.com/documentation/best-practices)
-- [Copyright](https://about.musixmatch.com/copyright)
-- [Privacy Policy](https://about.musixmatch.com/privacy-policy)
+- [Privacy policy](https://about.musixmatch.com/privacy-policy)
+- [GitHub](https://github.com/musixmatch)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** API Evangelist
+**Kin Score 31.4** — thin · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** info@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 42.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 31.6 |
 
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/musixmatch/](https://apis.io/providers/musixmatch/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Musixmatch: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/musixmatch/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
